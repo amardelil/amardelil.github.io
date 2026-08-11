@@ -45,3 +45,12 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 });
+// Contact form submission (demo)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message, Amar will get back to you soon!');
+    this.reset();
+  });
+}
