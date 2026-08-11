@@ -5,25 +5,26 @@ AOS.init({ duration: 800, once: true });
 const toggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
 if (toggle && navLinks) {
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', function() {
     navLinks.classList.toggle('open');
   });
 }
 
 // Close menu on link click
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
     navLinks.classList.remove('open');
   });
 });
+
 // Active nav highlighting on scroll
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');
 const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function() {
   let current = '';
-  sections.forEach(section => {
+  sections.forEach(function(section) {
     const top = section.offsetTop - 120;
     const bottom = top + section.offsetHeight;
     if (window.scrollY >= top && window.scrollY < bottom) {
@@ -31,9 +32,9 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  navAnchors.forEach(link => {
+  navAnchors.forEach(function(link) {
     link.classList.remove('active');
-    if (link.getAttribute('href') === #) {
+    if (link.getAttribute('href') === '#' + current) {
       link.classList.add('active');
     }
   });
@@ -45,6 +46,7 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 });
+
 // Contact form submission (demo)
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
