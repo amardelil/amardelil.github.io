@@ -85,6 +85,7 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   align-items: center;
 }
+/* ---------- NAV BRAND (Logo) ---------- */
 .nav-brand {
   font-size: 1.6rem;
   font-weight: 700;
@@ -100,17 +101,17 @@ h1, h2, h3, h4 {
 
 /* Code icon </> with blue/purple accent */
 .nav-brand .code-icon {
-  color: #818cf8;        /* Indigo/blue accent */
-  font-weight: 600;
-  font-size: 0.9em;
+  color: #818cf8;        /* Indigo accent */
+  font-weight: 700;
+  font-size: 1em;
   margin-right: 0.05rem;
-  transition: color 0.2s ease;
-  letter-spacing: -0.5px;
+  font-family: 'Courier New', monospace; /* Ensures it renders correctly */
+  letter-spacing: -1px;
 }
 
 /* Accent dot at the end */
 .nav-brand span:last-child {
-  color: #818cf8;        /* Same blue/purple accent */
+  color: #818cf8;
 }
 .nav-brand span {
   color: #818cf8;
@@ -161,7 +162,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   padding: 120px 0 80px;
-  background: linear-gradient(135deg, #0b0b1a 0%, #16162e 100%);
+  background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0d0d2b 100%);
   position: relative;
   overflow: hidden;
 }
