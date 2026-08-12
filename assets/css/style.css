@@ -151,31 +151,6 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
-/* Apply to hero image */
-.hero-image img {
-  /* Original styles */
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  
-  /* Irregular shape (organic blob) */
-  clip-path: polygon(
-    20% 0%, 80% 0%, 100% 20%, 100% 80%, 
-    80% 100%, 20% 100%, 0% 80%, 0% 20%
-  );
-  
-  /* Soft blur effect on the image itself */
-  filter: blur(2px) brightness(0.95);
-  
-  /* Optional: subtle transition */
-  transition: filter 0.3s ease;
-}
-
-/* Remove blur on hover (optional) */
-.hero-image img:hover {
-  filter: blur(0px) brightness(1);
-}
 .btn-primary {
   display: inline-block;
   background: #2563eb;
@@ -235,14 +210,41 @@ h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
   display: flex;
   justify-content: flex-end;
 }
+/* ====== IRREGULAR BLOB SHAPE + BLUR (CSS-only) ====== */
 .hero-image img {
   width: 100%;
   max-width: 420px;
   aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-  border: 3px solid #fff;
+  border-radius: 0; /* Remove any existing border-radius */
+
+  /* ---- IRREGULAR ORGANIC SHAPE (blob) ---- */
+  clip-path: polygon(
+    30% 0%,
+    70% 2%,
+    92% 18%,
+    98% 45%,
+    94% 72%,
+    80% 92%,
+    55% 98%,
+    28% 94%,
+    8% 78%,
+    2% 48%,
+    6% 22%,
+    22% 4%
+  );
+
+  /* ---- SOFT BLUR ---- */
+  filter: blur(3px) brightness(0.95);
+
+  /* ---- SMOOTH TRANSITION ---- */
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* Remove blur on hover (optional – makes it interactive) */
+.hero-image img:hover {
+  filter: blur(0px) brightness(1);
+  transform: scale(1.02);
 }
 .hero-float {
   position: absolute;
