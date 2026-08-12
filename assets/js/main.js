@@ -55,4 +55,20 @@ if (contactForm) {
     alert('Thank you for your message, Amar will get back to you soon!');
     this.reset();
   });
+  // Animate skill progress bars on scroll
+const skillBars = document.querySelectorAll('.progress-fill');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const targetWidth = bar.style.width; // store the target width
+      bar.style.width = '0'; // reset to 0
+      setTimeout(() => {
+        bar.style.width = targetWidth; // animate to target
+      }, 100);
+    }
+  });
+}, { threshold: 0.3 });
+
+skillBars.forEach(bar => observer.observe(bar));
 }

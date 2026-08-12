@@ -475,57 +475,90 @@ h1, h2, h3, h4 {
   font-size: 0.85rem;
   color: #475569;
 }
-
-/* ---------- SKILLS (existing) ---------- */
+/* ---------- SKILLS (Horizontal Progress Bars) ---------- */
 .skills {
   padding: 80px 0;
   background: #f8fafc;
 }
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   margin-top: 2rem;
 }
-.skill-card {
+
+.skill-item {
   background: #ffffff;
-  padding: 1.8rem 1.5rem;
-  border-radius: 20px;
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
   border: 1px solid #e2e8f0;
-  transition: all 0.25s;
-  text-align: center;
-}
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
-  border-color: #cbd5e1;
-}
-.skill-card i {
-  font-size: 2.8rem;
-  color: #4f46e5;
-  margin-bottom: 0.8rem;
-}
-.skill-card h4 {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #0f172a;
-}
-.skill-level {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 0.5rem;
-}
-.skill-level .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #e2e8f0;
-}
-.skill-level .dot.filled {
-  background: #4f46e5;
+  transition: all 0.3s ease;
 }
 
+.skill-item:hover {
+  border-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.skill-info {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-info i {
+  color: #4f46e5;
+  font-size: 1.2rem;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.skill-percent {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4f46e5;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4f46e5;
+  border-radius: 10px;
+  width: 0%; /* Start at 0, JS will animate to the inline style value */
+  transition: width 1.2s ease;
+}
+
+/* Responsive: 2 columns on tablets, 1 on mobile */
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* ---------- NEW: TECHNOLOGIES SECTION ---------- */
 .technologies {
   padding: 80px 0;
