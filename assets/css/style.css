@@ -307,6 +307,7 @@ h1, h2, h3, h4 {
   animation: floatIcon 5s ease-in-out infinite;
 }
 /* ---------- HERO TECH LABEL ---------- */
+/* ---------- HERO TECH ICONS (Rectangular Boxes – Original Colors) ---------- */
 .tech-label {
   font-size: 0.65rem;
   font-weight: 600;
@@ -317,12 +318,15 @@ h1, h2, h3, h4 {
   margin-bottom: 0.5rem;
   display: block;
 }
+
 .hero-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.2rem;
 }
+
+/* Base box style – NO global color */
 .tech-badge {
   display: inline-flex;
   align-items: center;
@@ -332,16 +336,38 @@ h1, h2, h3, h4 {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  color: #4f46e5;
   font-size: 1.2rem;
   transition: all 0.2s ease;
 }
+
+/* Hover effect – lift and shadow */
 .tech-badge:hover {
-  border-color: #4f46e5;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
+/* ---------- ORIGINAL BRAND COLORS ---------- */
+.tech-badge .fa-html5 { color: #E34F26; }
+.tech-badge .fa-css3-alt { color: #1572B6; }
+.tech-badge .fa-js { color: #F7DF1E; }
+.tech-badge .fa-react { color: #61DAFB; }
+.tech-badge .fa-php { color: #777BB4; }
+.tech-badge .fa-laravel { color: #FF2D20; }
+.tech-badge .fa-database { color: #4479A1; }
+.tech-badge .fa-git-alt { color: #F05032; }
+.tech-badge .fa-github { color: #181717; }
+
+/* Optional: darken on hover for a nice interaction */
+.tech-badge:hover .fa-html5 { color: #cc3b1a; }
+.tech-badge:hover .fa-css3-alt { color: #0d47a1; }
+.tech-badge:hover .fa-js { color: #d4c700; }
+.tech-badge:hover .fa-react { color: #00b4d8; }
+.tech-badge:hover .fa-php { color: #5c5e8a; }
+.tech-badge:hover .fa-laravel { color: #cc2400; }
+.tech-badge:hover .fa-database { color: #2a5f7a; }
+.tech-badge:hover .fa-git-alt { color: #c0401e; }
+.tech-badge:hover .fa-github { color: #000000; }
+/* ... etc (optional) */
 .hero-float:nth-child(2) { top: 8%; left: -5%; animation-delay: 0s; }
 .hero-float:nth-child(3) { bottom: 12%; right: -8%; animation-delay: 1.5s; }
 .hero-float:nth-child(4) { top: 20%; right: 0%; animation-delay: 3s; }
