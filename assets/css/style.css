@@ -938,6 +938,106 @@ h1, h2, h3, h4 {
   .about-stats {
     justify-content: center;
   }
+  /* ---------- ABOUT: Horizontal Info Grid ---------- */
+.about-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* two columns */
+  gap: 0.5rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.about-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.about-info-item i {
+  width: 32px;
+  height: 32px;
+  background: #eef2ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f46e5;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ---------- ABOUT: Buttons Side by Side ---------- */
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0;
+}
+
+.btn-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 24px;
+  background: #4f46e5;
+  color: #ffffff;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-email:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+
+.btn-email i {
+  font-size: 1.1rem;
+}
+
+/* Re-use existing .btn-secondary for Download CV */
+.about-buttons .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 24px;
+  background: transparent;
+  color: #1e293b;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid #cbd5e1;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+
+.about-buttons .btn-secondary:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE: Stack on mobile ---------- */
+@media (max-width: 600px) {
+  .about-info-grid {
+    grid-template-columns: 1fr;  /* single column on small screens */
+  }
+  .about-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about-buttons .btn-email,
+  .about-buttons .btn-secondary {
+    text-align: center;
+    justify-content: center;
+  }
+}
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
