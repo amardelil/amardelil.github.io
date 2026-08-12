@@ -431,6 +431,34 @@ h1, h2, h3, h4 {
   gap: 2rem;
   margin-top: 1.5rem;
 }
+/* ---------- ABOUT EMAIL BUTTON ---------- */
+.about-email-btn {
+  margin-top: 1.2rem;
+}
+
+.btn-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 24px;
+  background: #4f46e5;
+  color: #ffffff;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-email:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+}
+.btn-email i {
+  font-size: 1.1rem;
+}
 .stat-box {
   background: #f8fafc;
   padding: 1rem 1.8rem;
