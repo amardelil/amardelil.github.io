@@ -89,6 +89,28 @@ h1, h2, h3, h4 {
   font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  transition: transform 0.2s ease;
+}
+.nav-brand:hover {
+  transform: scale(1.02);
+}
+
+/* Code icon </> with blue/purple accent */
+.nav-brand .code-icon {
+  color: #818cf8;        /* Indigo/blue accent */
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-right: 0.05rem;
+  transition: color 0.2s ease;
+  letter-spacing: -0.5px;
+}
+
+/* Accent dot at the end */
+.nav-brand span:last-child {
+  color: #818cf8;        /* Same blue/purple accent */
 }
 .nav-brand span {
   color: #818cf8;
