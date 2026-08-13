@@ -1282,3 +1282,196 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 }
+/* ==================================================
+   BROWSER FRAGMENTS – Mock UI Background Elements
+   ================================================== */
+
+/* ---------- BASE FRAGMENT STYLES ---------- */
+.browser-fragment {
+  position: absolute;
+  z-index: 0; /* Behind content (z-index: 1 is content) */
+  pointer-events: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(79, 70, 229, 0.12);
+  box-shadow: 0 0 40px rgba(79, 70, 229, 0.04);
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+}
+
+/* ---------- FRAGMENT 1: UPPER-LEFT ---------- */
+.fragment-1 {
+  top: 6%;
+  left: -1%;
+  width: 200px;
+  height: 150px;
+  transform: rotate(-4deg);
+  animation: floatFragment1 12s ease-in-out infinite;
+}
+@keyframes floatFragment1 {
+  0%, 100% { transform: rotate(-4deg) translate(0, 0); }
+  50% { transform: rotate(-2deg) translate(6px, -8px); }
+}
+
+/* ---------- FRAGMENT 2: LOWER-RIGHT ---------- */
+.fragment-2 {
+  bottom: 12%;
+  right: -1%;
+  width: 180px;
+  height: 140px;
+  transform: rotate(3deg);
+  animation: floatFragment2 14s ease-in-out infinite;
+}
+@keyframes floatFragment2 {
+  0%, 100% { transform: rotate(3deg) translate(0, 0); }
+  50% { transform: rotate(1deg) translate(-8px, 6px); }
+}
+
+/* ---------- FRAGMENT 3: FAR-RIGHT (Optional) ---------- */
+.fragment-3 {
+  top: 40%;
+  right: -2%;
+  width: 120px;
+  height: 100px;
+  transform: rotate(6deg);
+  animation: floatFragment3 10s ease-in-out infinite;
+  opacity: 0.2;
+}
+@keyframes floatFragment3 {
+  0%, 100% { transform: rotate(6deg) translate(0, 0); }
+  50% { transform: rotate(4deg) translate(-4px, 4px); }
+}
+
+/* ---------- BROWSER HEADER (title bar) ---------- */
+.browser-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(79, 70, 229, 0.06);
+  gap: 8px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.browser-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.browser-dots .dot.red   { background: #ff5f56; }
+.browser-dots .dot.yellow{ background: #ffbd2e; }
+.browser-dots .dot.green { background: #27c93f; }
+
+.browser-url {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 500;
+  color: #4f46e5;
+  opacity: 0.3;
+  letter-spacing: 0.3px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
+/* ---------- BROWSER BODY (Mock UI) ---------- */
+.browser-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ---- Fragment 1 Mock UI (Card + Button) ---- */
+.mock-card {
+  background: rgba(79, 70, 229, 0.04);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid rgba(79, 70, 229, 0.06);
+}
+.mock-card-bar {
+  height: 6px;
+  width: 60%;
+  background: #4f46e5;
+  border-radius: 4px;
+  opacity: 0.15;
+}
+.mock-card-line {
+  height: 4px;
+  width: 100%;
+  background: #4f46e5;
+  border-radius: 4px;
+  opacity: 0.08;
+}
+.mock-card-line.short {
+  width: 70%;
+}
+
+.mock-btn {
+  height: 20px;
+  width: 50%;
+  background: #4f46e5;
+  border-radius: 20px;
+  opacity: 0.1;
+  margin-top: 2px;
+  align-self: flex-start;
+}
+
+/* ---- Fragment 2 Mock UI (Dashboard Stats) ---- */
+.mock-dashboard {
+  display: flex;
+  gap: 8px;
+}
+.mock-stat {
+  flex: 1;
+  height: 30px;
+  background: rgba(79, 70, 229, 0.05);
+  border-radius: 6px;
+  border: 1px solid rgba(79, 70, 229, 0.06);
+}
+
+/* ---- Fragment 3 Mock UI (Input field) ---- */
+.mock-input {
+  height: 18px;
+  width: 100%;
+  background: rgba(79, 70, 229, 0.04);
+  border-radius: 4px;
+  border: 1px solid rgba(79, 70, 229, 0.06);
+}
+
+/* ---------- GLOW PULSE ANIMATION (Added to all fragments) ---------- */
+.browser-fragment {
+  animation: glowPulse 6s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(79, 70, 229, 0.03); }
+  50% { box-shadow: 0 0 50px rgba(79, 70, 229, 0.08); }
+}
+
+/* ---------- RESPONSIVE: Tablet ---------- */
+@media (max-width: 992px) {
+  .fragment-1 { width: 140px; height: 110px; opacity: 0.25; }
+  .fragment-2 { width: 120px; height: 100px; opacity: 0.25; }
+  .fragment-3 { display: none; }
+  .browser-body { padding: 8px 10px; }
+  .mock-card { padding: 4px 6px; }
+  .mock-btn { height: 14px; }
+  .mock-stat { height: 20px; }
+  .browser-url { font-size: 0.45rem; }
+}
+
+/* ---------- RESPONSIVE: Mobile ---------- */
+@media (max-width: 600px) {
+  .browser-fragment {
+    display: none; /* Hide completely to keep hero clean on small screens */
+  }
+}
