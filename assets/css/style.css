@@ -155,7 +155,7 @@ h1, h2, h3, h4 {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 0 60px;
+  padding: 130px 0 80px; /* was 120px 0 60px */
   background: #f5f0ff; /* Fallback */
   overflow: hidden;
   z-index: 1;
@@ -185,19 +185,19 @@ h1, h2, h3, h4 {
   bottom: 0;
   background: linear-gradient(180deg, transparent 0%, #d9d2f0 100%);
   transform: skewX(-5deg) scaleY(1.2);
-  opacity: 0.3;
+  opacity: 0.03;
 }
 .layer-2 {
   bottom: 5%;
   background: linear-gradient(180deg, transparent 0%, #c4b8e6 100%);
   transform: skewX(3deg) scaleY(1.1);
-  opacity: 0.25;
+  opacity: 0.05;
 }
 .layer-3 {
   bottom: 10%;
   background: linear-gradient(180deg, transparent 0%, #b5a8d9 100%);
   transform: skewX(-2deg) scaleY(0.9);
-  opacity: 0.2;
+  opacity: 0.02;
 }
 
 /* Subtle code fragments */
@@ -205,32 +205,37 @@ h1, h2, h3, h4 {
   position: absolute;
   font-family: 'Courier New', monospace;
   color: #4f46e5;
-  opacity: 0.04;
-  font-size: 1.2rem;
   white-space: nowrap;
   letter-spacing: 0.5px;
 }
 .code-1 {
   top: 20%;
   right: 10%;
-  font-size: 2rem;
-  opacity: 0.05;
+  font-size: 2.2rem; /* slightly larger */
+  opacity: 0.18; /* was 0.05 – more visible */
   transform: rotate(-3deg);
 }
 .code-2 {
   bottom: 25%;
   left: 5%;
   font-size: 1.6rem;
-  opacity: 0.04;
+  opacity: 0.08;
   transform: rotate(2deg);
 }
 .code-3 {
   top: 50%;
   right: 25%;
   font-size: 1.8rem;
-  opacity: 0.045;
+  opacity: 0.07;
   transform: rotate(1deg);
 }
+
+/* Syntax highlighting for background code */
+.code-1 .code-kw { color: #4f46e5; font-weight: 600; }  /* const – purple */
+.code-1 .code-var { color: #0891b2; }                    /* developer – teal */
+.code-1 .code-op { color: #475569; }                     /* = – gray */
+.code-1 .code-bool { color: #b45309; }                   /* true – amber */
+.code-1 .code-punc { color: #64748b; }                   /* ; – slate */
 
 /* ---------- CONTAINER ---------- */
 .hero-container {
@@ -383,7 +388,7 @@ h1, h2, h3, h4 {
 .portrait-wrapper {
   position: relative;
   width: 100%;
- max-width: 480px;
+  max-width: 560px; /* was 480px – ~17% larger */
    aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
@@ -398,7 +403,7 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 .ring-1 {
-   width: 130%; /* was 120% */
+   width: 130%;  /* was 130% – keep or slightly increase */
   height: 130%;
   top: -15%;
   left: -15%;
