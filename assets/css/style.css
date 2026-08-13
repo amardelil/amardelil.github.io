@@ -169,13 +169,6 @@ h1, h2, h3, h4 {
 }
 
 /* 2. Background code — a touch more visible, still subtle */
-.code-1 {
-  top: 18%;
-  right: 8%;
-  font-size: 2rem;
-  opacity: 0.15; /* was 0.18 – still visible but soft */
-  transform: rotate(-3deg);
-}
 .code-2 {
   bottom: 25%;
   left: 5%;
@@ -273,8 +266,12 @@ h1, h2, h3, h4 {
   transform: translateY(-50%);
 }
 .code-1 {
-
-/* 7. Hire Me button — better contrast, same outlined style */
+  top: 18%;
+  right: 8%;
+  font-size: 2rem;
+  opacity: 0.15; /* was 0.18 – still visible but soft */
+  transform: rotate(-3deg);
+}
 .btn-secondary {
   display: inline-block;
   background: transparent;
