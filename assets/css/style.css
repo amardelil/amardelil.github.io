@@ -147,357 +147,102 @@ h1, h2, h3, h4 {
   border: none;
 }
 /* ==================================================
-   HERO – Premium Light Gradient with Mountains
+   HERO — FINAL POLISH PATCH
+   Replace the matching rules in style.css with these.
+   Everything not listed here (typography, colors, nav,
+   headline, CTA wording, social icons, mountain concept)
+   is unchanged.
    ================================================== */
 
+/* 1. Hero container — more breathing room at the bottom,
+      slightly shorter forced height so nothing feels
+      stretched or cramped on a standard desktop viewport */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 92vh;              /* was 100vh */
   display: flex;
   align-items: center;
-  padding: 130px 0 80px; /* was 120px 0 60px */
-  background: #f5f0ff; /* Fallback */
+  padding: 120px 0 100px;        /* was 130px 0 80px — more bottom room */
+  background: #f5f0ff;
   overflow: hidden;
   z-index: 1;
 }
 
-/* ---------- BACKGROUND LAYERS ---------- */
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/* Mountain/wave layers – using large skewed divs with gradients */
-.mountain-layer {
-  position: absolute;
-  bottom: 0;
-  left: -10%;
-  width: 120%;
-  height: 40%;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  opacity: 0.4;
-}
-
-.layer-1 {
-  bottom: 0;
-  background: linear-gradient(180deg, transparent 0%, #d9d2f0 100%);
-  transform: skewX(-5deg) scaleY(1.2);
-  opacity: 0.03;
-}
-.layer-2 {
-  bottom: 5%;
-  background: linear-gradient(180deg, transparent 0%, #c4b8e6 100%);
-  transform: skewX(3deg) scaleY(1.1);
-  opacity: 0.05;
-}
-.layer-3 {
-  bottom: 10%;
-  background: linear-gradient(180deg, transparent 0%, #b5a8d9 100%);
-  transform: skewX(-2deg) scaleY(0.9);
-  opacity: 0.02;
-}
-
-/* Subtle code fragments */
-.code-fragment {
-  position: absolute;
-  font-family: 'Courier New', monospace;
-  color: #4f46e5;
-  white-space: nowrap;
-  letter-spacing: 0.5px;
-}
+/* 2. Background code — a touch more visible, still subtle */
 .code-1 {
   top: 20%;
   right: 10%;
-  font-size: 2.2rem; /* slightly larger */
-  opacity: 0.18; /* was 0.05 – more visible */
+  font-size: 2.2rem;
+  opacity: 0.24;                 /* was 0.18 */
   transform: rotate(-3deg);
 }
 .code-2 {
   bottom: 25%;
   left: 5%;
   font-size: 1.6rem;
-  opacity: 0.08;
+  opacity: 0.11;                 /* was 0.08 */
   transform: rotate(2deg);
 }
 .code-3 {
   top: 50%;
   right: 25%;
   font-size: 1.8rem;
-  opacity: 0.07;
+  opacity: 0.1;                  /* was 0.07 */
   transform: rotate(1deg);
 }
 
-/* Syntax highlighting for background code */
-.code-1 .code-kw { color: #4f46e5; font-weight: 600; }  /* const – purple */
-.code-1 .code-var { color: #0891b2; }                    /* developer – teal */
-.code-1 .code-op { color: #475569; }                     /* = – gray */
-.code-1 .code-bool { color: #b45309; }                   /* true – amber */
-.code-1 .code-punc { color: #64748b; }                   /* ; – slate */
-
-/* ---------- CONTAINER ---------- */
-.hero-container {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ---------- LEFT COLUMN ---------- */
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-/* Badge */
-.hero-badge {
-  display: inline-block;
-  background: rgba(79, 70, 229, 0.08);
-  color: #4f46e5;
-  padding: 4px 18px;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  width: fit-content;
-  border: 1px solid rgba(79, 70, 229, 0.15);
-}
-
-/* Headline */
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0;
-  line-height: 1.1;
-}
-.gradient-text {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Tagline */
-.hero .tagline {
-  font-size: 1.2rem;
-  color: #475569;
-  font-weight: 400;
-  margin: 0;
-}
-
-/* Description */
-.hero .desc {
-  color: #475569;
-  max-width: 480px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* Buttons */
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-.btn-primary {
-  display: inline-block;
-  background: #4f46e5;
-  color: #fff;
-  padding: 12px 32px;
-  border-radius: 40px;
-  font-weight: 600;
-  transition: all 0.25s;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-.btn-primary:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.25);
-}
-.btn-secondary {
-  display: inline-block;
-  background: transparent;
-  color: #1e293b;
-  padding: 12px 32px;
-  border-radius: 40px;
-  font-weight: 600;
-  border: 1.5px solid #cbd5e1;
-  transition: all 0.25s;
-  text-decoration: none;
-}
-.btn-secondary:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
-  transform: translateY(-2px);
-}
-
-/* Social */
-.hero-social {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 0.8rem;
-}
-.social-label {
-  font-size: 0.85rem;
-  color: #475569;
-  font-weight: 400;
-}
-.hero-social a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #1e293b;
-  font-size: 1.1rem;
-  transition: all 0.25s;
-  border: 1px solid #e2e8f0;
-  text-decoration: none;
-}
-.hero-social a:hover {
-  background: #4f46e5;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.2);
-}
-
-/* ---------- RIGHT COLUMN – PORTRAIT ---------- */
-.hero-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* 3. Portrait — reduced ~8% */
 .portrait-wrapper {
   position: relative;
   width: 100%;
-  max-width: 560px; /* was 480px – ~17% larger */
-   aspect-ratio: 1/1;
+  max-width: 515px;              /* was 560px (~8% smaller) */
+  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Decorative rings */
-.portrait-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(79, 70, 229, 0.1);
-  pointer-events: none;
-}
+/* 4. Decorative rings — dialed back to atmospheric, not distracting */
 .ring-1 {
-   width: 130%;  /* was 130% – keep or slightly increase */
+  width: 130%;
   height: 130%;
   top: -15%;
   left: -15%;
+  border-color: rgba(79, 70, 229, 0.06);   /* was 0.1 */
   animation: ringSpin 20s linear infinite;
 }
 .ring-2 {
-   width: 160%; /* was 140% */
+  width: 160%;
   height: 160%;
   top: -30%;
   left: -30%;
-  border-color: rgba(124, 58, 237, 0.06);
+  border-color: rgba(124, 58, 237, 0.035); /* was 0.06 */
   animation: ringSpin 30s linear infinite reverse;
 }
-@keyframes ringSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
-/* Portrait frame – large */
-.portrait-frame {
-  width: 85%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  padding: 5px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  box-shadow: 0 0 50px rgba(79, 70, 229, 0.15);
-  position: relative;
-  z-index: 2;
-}
-.portrait-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  background: #fff;
-}
-
-/* Floating tech icons – ONLY THREE */
-/* ---------- INDIVIDUAL FLOATING TECH ICON CARDS ---------- */
-.float-icon {
-  position: absolute;
-  z-index: 3;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: floatIcon 6s ease-in-out infinite;
-  width: 48px;
-  height: 48px;
-}
-
-/* Positioning – adjusted for enlarged portrait */
-.icon-php {
-  top: 2%;
-  left: -2%;
+/* 5. Floating tech icons — tighter, balanced orbit around the
+      portrait edge instead of spread out. Exactly HTML5 / CSS3 / JS. */
+.icon-html {
+  top: 4%;
+  right: 8%;
   animation-delay: 0s;
 }
-.icon-html {
-  top: 2%;
-  right: -2%;
-  animation-delay: 1s;
-}
 .icon-css {
-  top: 25%;
-  right: -6%;
-  animation-delay: 2s;
-}
-.icon-mysql {
-  bottom: 8%;
+  top: 46%;
   right: -2%;
+  animation-delay: 1.5s;
+}
+.icon-js {
+  bottom: 6%;
+  left: 10%;
   animation-delay: 3s;
 }
 
-/* Keep original brand colors */
-.icon-html i { color: #E34F26; }
-.icon-css i { color: #1572B6; }
-.icon-mysql i { color: #4479A1; }
-.icon-php i { color: #777BB4; }
-
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(2deg); }
-}
-/* ---------- IMPROVED CODE SNIPPET (syntax highlighted) ---------- */
+/* 6. Code snippet card — moved off the portrait entirely,
+      sent behind the portrait in stacking order, kept beside it */
 .glass-card.card-code {
   position: absolute;
-  z-index: 3;
+  z-index: 1;                    /* was 3 — now sits behind the portrait (z-index: 2) */
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   border-radius: 12px;
@@ -507,67 +252,29 @@ h1, h2, h3, h4 {
   font-family: 'Courier New', monospace;
   font-size: 0.9rem;
   white-space: nowrap;
-  /* Position: keep it on the left of portrait, as before */
-  left: -20%;
-  top: 45%;
-  transform: translateY(-50%);
+  left: -32%;                    /* was -20% */
+  top: 10%;                      /* was 45% — clears the JS icon at bottom-left */
+  transform: none;               /* was translateY(-50%) */
 }
 
-/* Syntax colors – fit the light portfolio theme */
-.card-code .kw { color: #4f46e5; font-weight: 600; }   /* keyword – blue */
-.card-code .id { color: #0891b2; }                      /* variable – teal */
-.card-code .op { color: #475569; }                      /* operator – gray */
-.card-code .bool { color: #b45309; }                    /* boolean – amber */
-.card-code .punc { color: #64748b; }                    /* punctuation – slate */
-/* Individual brand colors (optional) */
-.icon-html i { color: #E34F26; }
-.icon-css i { color: #1572B6; }
-.icon-js i { color: #F7DF1E; }
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 992px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
-  }
-  .hero-left {
-    align-items: center;
-  }
-  .hero .desc {
-    max-width: 100%;
-  }
-  .hero-buttons {
-    justify-content: center;
-  }
-  .hero-social {
-    justify-content: center;
-  }
-  .hero-right {
-    order: -1;
-  }
-  .portrait-wrapper {
-    max-width: 280px;
-  }
-  .float-icon {
-    font-size: 1.2rem;
-    padding: 8px;
-  }
-  .icon-html { top: 2%; left: 0%; }
-  .icon-css { top: 5%; right: 0%; }
-  .icon-js { bottom: 5%; left: 5%; }
-  .ring-1, .ring-2 { display: none; }
-  .code-fragment { display: none; }
+/* 7. Hire Me button — better contrast, same outlined style */
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #0f172a;                /* was #1e293b — slightly darker */
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  border: 2px solid #94a3b8;     /* was 1.5px solid #cbd5e1 — more contrast */
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+  transform: translateY(-2px);
 }
 
-@media (max-width: 600px) {
-  .hero h1 { font-size: 2.2rem; }
-  .hero .tagline { font-size: 1rem; }
-  .hero-buttons { flex-direction: column; align-items: stretch; }
-  .btn-primary, .btn-secondary { text-align: center; }
-  .portrait-wrapper { max-width: 200px; }
-  .float-icon { display: none; }
-}
 /* ---------- ABOUT ---------- */
 .about {
   padding: 80px 0;
