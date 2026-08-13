@@ -42,65 +42,74 @@
       </button>
     </div>
   </nav>
-  <!-- Hero Section -->
+  <!-- ==================================================
+     HERO – Premium Light Gradient with Mountain Layers
+     ================================================== -->
 <section class="hero" id="home">
-  <!-- Background Grid -->
-  <div class="hero-grid"></div>
+  <!-- Background layers -->
+  <div class="hero-background">
+    <!-- Mountain/wave layers -->
+    <div class="mountain-layer layer-1"></div>
+    <div class="mountain-layer layer-2"></div>
+    <div class="mountain-layer layer-3"></div>
+
+    <!-- Subtle code fragments -->
+    <div class="code-fragment code-1">const developer = true;</div>
+    <div class="code-fragment code-2">function buildExperience() {}</div>
+    <div class="code-fragment code-3">&lt;FullStack /&gt;</div>
+  </div>
 
   <div class="container hero-container">
-    <!-- Top-left badge -->
-    <div class="hero-badge-wrapper">
-      <span class="status-dot"></span>
-      <span class="status-text">Available for Work</span>
-    </div>
+    <!-- LEFT COLUMN -->
+    <div class="hero-left">
+      <!-- Badge -->
+      <div class="hero-badge">Software Developer</div>
 
-    <!-- Left Column: Text -->
-    <div class="hero-content">
+      <!-- Headline -->
       <h1>Hi, I'm <span class="gradient-text">Amar Delil</span></h1>
+
+      <!-- Tagline -->
       <p class="tagline">Building practical, modern digital experiences.</p>
+
+      <!-- Description -->
       <p class="desc">
         I'm a passionate full-stack web developer based in Ethiopia,
         specializing in building clean, performant, and user-centered
         web applications that solve real-world problems.
       </p>
+
+      <!-- CTA Buttons -->
       <div class="hero-buttons">
-        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#projects" class="btn-primary">View My Work →</a>
         <a href="#contact" class="btn-secondary">Hire Me</a>
       </div>
+
+      <!-- Social Links -->
       <div class="hero-social">
         <span class="social-label">Let's connect</span>
         <a href="https://github.com/amardelil" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <!-- Add more if needed -->
+        <a href="https://linkedin.com/in/amardelil" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:programmeramardelil21@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
 
-    <!-- Right Column: Profile with Floating Cards -->
-    <div class="hero-profile">
-      <!-- Code snippet card (left of profile) -->
-      <div class="glass-card card-code">
-        <code>const developer = true;</code>
-      </div>
+    <!-- RIGHT COLUMN – Large Portrait -->
+    <div class="hero-right">
+      <div class="portrait-wrapper">
+        <!-- Decorative rings -->
+        <div class="portrait-ring ring-1"></div>
+        <div class="portrait-ring ring-2"></div>
 
-      <!-- Large Profile Image -->
-      <div class="profile-frame">
-        <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
-      </div>
+        <!-- Circular portrait frame -->
+        <div class="portrait-frame">
+          <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
+        </div>
 
-      <!-- Tech icons card (right of profile, or below/above) -->
-      <div class="glass-card card-tech">
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3-alt"></i>
-        <i class="fas fa-database"></i> <!-- MySQL -->
-        <i class="fab fa-php"></i>
+        <!-- Floating tech icons (only THREE) -->
+        <div class="float-icon icon-html"><i class="fab fa-html5"></i></div>
+        <div class="float-icon icon-css"><i class="fab fa-css3-alt"></i></div>
+        <div class="float-icon icon-js"><i class="fab fa-js"></i></div>
       </div>
-    </div>
-
-    <!-- Bottom Tech Logos -->
-    <div class="tech-logos">
-      <span><i class="fab fa-github"></i> GitHub</span>
-      <span><i class="fas fa-code"></i> VS Code</span>
-      <span><i class="fab fa-docker"></i> Docker</span>
-      <span><i class="fab fa-aws"></i> AWS</span>
     </div>
   </div>
 </section>
