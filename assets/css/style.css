@@ -155,7 +155,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   padding: 120px 0 80px;
-  background: #fafbff;
+  background: linear-gradient(170deg, #f5f3ff 0%, #ede9fe 30%, #eef2ff 60%, #fafbff 100%);
   overflow: hidden;
   z-index: 1;
 }
@@ -353,15 +353,15 @@ h1, h2, h3, h4 {
 .shape-1 {
   width: 500px;
   height: 500px;
-  background: rgba(79, 70, 229, 0.06);
-  top: -15%;
+ background: rgba(79, 70, 229, 0.15);
+   top: -15%;
   left: -10%;
   animation: shapeFloat 14s ease-in-out infinite;
 }
 .shape-2 {
   width: 400px;
   height: 400px;
-  background: rgba(124, 58, 237, 0.05);
+background: rgba(124, 58, 237, 0.12);
   bottom: -10%;
   right: -5%;
   animation: shapeFloat 16s ease-in-out infinite reverse;
@@ -369,7 +369,7 @@ h1, h2, h3, h4 {
 .shape-3 {
   width: 300px;
   height: 300px;
-  background: rgba(79, 70, 229, 0.04);
+background: rgba(79, 70, 229, 0.10);
   top: 40%;
   left: 40%;
   animation: shapeFloat 12s ease-in-out infinite;
@@ -385,7 +385,7 @@ h1, h2, h3, h4 {
   position: absolute;
   border-radius: 50%;
   background: #4f46e5;
-  opacity: 0.08;
+  opacity: 0.2;
   pointer-events: none;
   z-index: 0;
 }
@@ -396,7 +396,7 @@ h1, h2, h3, h4 {
 /* Curved lines */
 .hero-curve {
   position: absolute;
-  border: 1px solid rgba(79, 70, 229, 0.06);
+  border: 1px solid rgba(79, 70, 229, 0.15);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
