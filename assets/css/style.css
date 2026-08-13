@@ -1,6 +1,5 @@
 /* ==================================================
    LIGHT THEME – Professional Software Developer Portfolio
-   Inspired by modern design, with blue/purple accents
    ================================================== */
 
 /* ---------- RESET & BASE ---------- */
@@ -14,8 +13,8 @@ html {
 }
 body {
   font-family: 'Inter', sans-serif;
-  background: #f5f7ff;   /* soft off-white with lavender tint */
-  color: #1e293b;        /* dark slate for high contrast */
+  background: #f5f7ff;
+  color: #1e293b;
   line-height: 1.6;
 }
 .container {
@@ -146,81 +145,290 @@ h1, h2, h3, h4 {
   background: none;
   border: none;
 }
+
 /* ==================================================
-   HERO — FINAL POLISH PATCH
-   Replace the matching rules in style.css with these.
-   Everything not listed here (typography, colors, nav,
-   headline, CTA wording, social icons, mountain concept)
-   is unchanged.
+   HERO – COMPLETE FIX
    ================================================== */
 
-/* 1. Hero container — more breathing room at the bottom,
-      slightly shorter forced height so nothing feels
-      stretched or cramped on a standard desktop viewport */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 110px 0 40px; /* was 130px 0 80px – more compact */
+  padding: 110px 0 40px;
   background: #f5f0ff;
   overflow: hidden;
   z-index: 1;
 }
 
-/* 2. Background code — a touch more visible, still subtle */
+/* Background layers (mountain + code) */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.mountain-layer {
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 40%;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+.layer-1 {
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, #d9d2f0 100%);
+  transform: skewX(-5deg) scaleY(1.2);
+  opacity: 0.18;
+}
+.layer-2 {
+  bottom: 5%;
+  background: linear-gradient(180deg, transparent 0%, #c4b8e6 100%);
+  transform: skewX(3deg) scaleY(1.1);
+  opacity: 0.14;
+}
+.layer-3 {
+  bottom: 10%;
+  background: linear-gradient(180deg, transparent 0%, #b5a8d9 100%);
+  transform: skewX(-2deg) scaleY(0.9);
+  opacity: 0.10;
+}
+
+.code-fragment {
+  position: absolute;
+  font-family: 'Courier New', monospace;
+  color: #4f46e5;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+.code-1 {
+  top: 18%;
+  right: 8%;
+  font-size: 2rem;
+  opacity: 0.15;
+  transform: rotate(-3deg);
+}
+.code-1 .code-kw { color: #4f46e5; font-weight: 600; }
+.code-1 .code-var { color: #0891b2; }
+.code-1 .code-op { color: #475569; }
+.code-1 .code-bool { color: #b45309; }
+.code-1 .code-punc { color: #64748b; }
+
 .code-2 {
   bottom: 25%;
   left: 5%;
   font-size: 1.6rem;
-  opacity: 0.11;                 /* was 0.08 */
+  opacity: 0.11;
   transform: rotate(2deg);
 }
 .code-3 {
   top: 50%;
   right: 25%;
   font-size: 1.8rem;
-  opacity: 0.1;                  /* was 0.07 */
+  opacity: 0.10;
   transform: rotate(1deg);
 }
 
-/* 3. Portrait — reduced ~8% */
+/* Hero container – grid */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* LEFT COLUMN */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(79, 70, 229, 0.08);
+  color: #4f46e5;
+  padding: 4px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  width: fit-content;
+  border: 1px solid rgba(79, 70, 229, 0.15);
+}
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.1;
+}
+.gradient-text {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .tagline {
+  font-size: 1.2rem;
+  color: #475569;
+  font-weight: 400;
+  margin: 0;
+}
+.hero .desc {
+  color: #475569;
+  max-width: 480px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.btn-primary {
+  display: inline-block;
+  background: #4f46e5;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: all 0.25s;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.25);
+}
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #0f172a;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  border: 2px solid #94a3b8;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+  transform: translateY(-2px);
+}
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+.social-label {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 400;
+}
+.hero-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e293b;
+  font-size: 1.1rem;
+  transition: all 0.25s;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+}
+.hero-social a:hover {
+  background: #4f46e5;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.2);
+}
+
+/* RIGHT COLUMN – PORTRAIT */
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .portrait-wrapper {
-  max-width: 500px; /* was 560px – still large but safe */
+  position: relative;
+  max-width: 500px;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.portrait-frame {
+  width: 85%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  box-shadow: 0 0 50px rgba(79, 70, 229, 0.15);
   position: relative;
+  z-index: 2;
+}
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background: #fff;
 }
 
-/* 4. Decorative rings — dialed back to atmospheric, not distracting */
+/* Decorative rings */
+.portrait-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(79, 70, 229, 0.06);
+  pointer-events: none;
+}
 .ring-1 {
-   width: 120%;  /* was 130% */
+  width: 120%;
   height: 120%;
   top: -10%;
   left: -10%;
-  border-color: rgba(79, 70, 229, 0.06);   /* was 0.1 */
+  border-color: rgba(79, 70, 229, 0.06);
   animation: ringSpin 20s linear infinite;
 }
 .ring-2 {
-   width: 145%;  /* was 160% */
+  width: 145%;
   height: 145%;
   top: -22%;
   left: -22%;
-  border-color: rgba(124, 58, 237, 0.035); /* was 0.06 */
+  border-color: rgba(124, 58, 237, 0.035);
   animation: ringSpin 30s linear infinite reverse;
 }
+@keyframes ringSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-/* 5. Floating tech icons — tighter, balanced orbit around the
-      portrait edge instead of spread out. Exactly HTML5 / CSS3 / JS. */
+/* Floating tech icons – exactly three */
 .float-icon {
   position: absolute;
   z-index: 3;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(4px);
   border-radius: 50%;
-  padding: 8px; /* slightly smaller */
+  padding: 8px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.6);
   font-size: 1.2rem;
@@ -246,9 +454,15 @@ h1, h2, h3, h4 {
   left: -4%;
   animation-delay: 3s;
 }
+.icon-html i { color: #E34F26; }
+.icon-css i { color: #1572B6; }
+.icon-js i { color: #F7DF1E; }
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
 
-/* 6. Code snippet card — moved off the portrait entirely,
-      sent behind the portrait in stacking order, kept beside it */
+/* Code snippet card – const developer = true; */
 .glass-card.card-code {
   position: absolute;
   z-index: 3;
@@ -265,31 +479,67 @@ h1, h2, h3, h4 {
   top: 45%;
   transform: translateY(-50%);
 }
-.code-1 {
-  top: 18%;
-  right: 8%;
-  font-size: 2rem;
-  opacity: 0.15; /* was 0.18 – still visible but soft */
-  transform: rotate(-3deg);
+.card-code .kw { color: #4f46e5; font-weight: 600; }
+.card-code .id { color: #0891b2; }
+.card-code .op { color: #475569; }
+.card-code .bool { color: #b45309; }
+.card-code .punc { color: #64748b; }
+
+/* ---------- RESPONSIVE: HERO ---------- */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-left {
+    align-items: center;
+  }
+  .hero .desc {
+    max-width: 100%;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .hero-social {
+    justify-content: center;
+  }
+  .hero-right {
+    order: -1;
+  }
+  .portrait-wrapper {
+    max-width: 320px;
+  }
+  .float-icon {
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+  .icon-html { top: 2%; right: 0%; }
+  .icon-css { top: 25%; right: -4%; }
+  .icon-js { bottom: 6%; left: 0%; }
+  .glass-card.card-code {
+    left: -10%;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+  .ring-1, .ring-2 { display: none; }
+  .code-fragment { display: none; }
 }
-.btn-secondary {
-  display: inline-block;
-  background: transparent;
-  color: #0f172a;                /* was #1e293b — slightly darker */
-  padding: 12px 32px;
-  border-radius: 40px;
-  font-weight: 600;
-  border: 2px solid #94a3b8;     /* was 1.5px solid #cbd5e1 — more contrast */
-  transition: all 0.25s;
-  text-decoration: none;
-}
-.btn-secondary:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
-  transform: translateY(-2px);
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero .tagline { font-size: 1rem; }
+  .hero-buttons { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-secondary { text-align: center; }
+  .portrait-wrapper { max-width: 200px; }
+  .float-icon { display: none; }
+  .glass-card.card-code { display: none; }
 }
 
-/* ---------- ABOUT ---------- */
+/* ==================================================
+   ABOUT (unchanged, but with minor fixes for email button)
+   ================================================== */
 .about {
   padding: 80px 0;
   background: #ffffff;
@@ -318,7 +568,7 @@ h1, h2, h3, h4 {
 .about-info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  gap: 0.5rem 1.5rem;
   margin: 1.5rem 0;
 }
 .about-info-item {
@@ -338,17 +588,32 @@ h1, h2, h3, h4 {
   justify-content: center;
   color: #4f46e5;
   font-size: 0.9rem;
+  flex-shrink: 0;
 }
 .about-stats {
   display: flex;
   gap: 2rem;
   margin-top: 1.5rem;
 }
-/* ---------- ABOUT EMAIL BUTTON ---------- */
+.stat-box {
+  background: #f8fafc;
+  padding: 1rem 1.8rem;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+.stat-box .number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+.stat-box .label {
+  font-size: 0.85rem;
+  color: #475569;
+}
 .about-email-btn {
   margin-top: 1.2rem;
 }
-
 .btn-email {
   display: inline-flex;
   align-items: center;
@@ -372,35 +637,43 @@ h1, h2, h3, h4 {
 .btn-email i {
   font-size: 1.1rem;
 }
-.stat-box {
-  background: #f8fafc;
-  padding: 1rem 1.8rem;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
-  text-align: center;
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0;
 }
-.stat-box .number {
-  font-size: 1.8rem;
-  font-weight: 700;
+.about-buttons .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 24px;
+  background: transparent;
+  color: #1e293b;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid #cbd5e1;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+.about-buttons .btn-secondary:hover {
+  border-color: #4f46e5;
   color: #4f46e5;
+  transform: translateY(-2px);
 }
-.stat-box .label {
-  font-size: 0.85rem;
-  color: #475569;
-}
-/* ---------- SKILLS (Horizontal Progress Bars) ---------- */
+
+/* ---------- SKILLS ---------- */
 .skills {
   padding: 80px 0;
   background: #f8fafc;
 }
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   margin-top: 2rem;
 }
-
 .skill-item {
   background: #ffffff;
   padding: 1rem 1.2rem;
@@ -408,20 +681,17 @@ h1, h2, h3, h4 {
   border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
 }
-
 .skill-item:hover {
   border-color: #4f46e5;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.08);
 }
-
 .skill-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
 }
-
 .skill-info {
   font-weight: 600;
   font-size: 0.9rem;
@@ -430,20 +700,17 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.5rem;
 }
-
 .skill-info i {
   color: #4f46e5;
   font-size: 1.1rem;
   width: 1.4rem;
   text-align: center;
 }
-
 .skill-percent {
   font-weight: 600;
   font-size: 0.85rem;
   color: #4f46e5;
 }
-
 .progress-bar {
   width: 100%;
   height: 5px;
@@ -451,7 +718,6 @@ h1, h2, h3, h4 {
   border-radius: 10px;
   overflow: hidden;
 }
-
 .progress-fill {
   height: 100%;
   background: #4f46e5;
@@ -459,19 +725,22 @@ h1, h2, h3, h4 {
   width: 0%;
   transition: width 1.2s ease;
 }
-
-/* Responsive */
 @media (max-width: 992px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- TECHNOLOGIES SECTION ---------- */
 .tech-stack {
   padding: 80px 0;
-  background: #f8fafc; /* or #ffffff, whichever matches your theme */
+  background: #f8fafc;
 }
-
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
@@ -479,7 +748,6 @@ h1, h2, h3, h4 {
   max-width: 700px;
   margin: 2rem auto 0;
 }
-
 .tech-box {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -489,18 +757,14 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   font-size: 2.2rem;
-  color: #4f46e5;
   transition: all 0.25s ease;
   aspect-ratio: 1 / 1;
 }
-
 .tech-box:hover {
   border-color: #4f46e5;
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(79, 70, 229, 0.08);
 }
-
-/* Original brand colors – apply to each icon */
 .tech-box .fa-html5 { color: #E34F26; }
 .tech-box .fa-css3-alt { color: #1572B6; }
 .tech-box .fa-js { color: #F7DF1E; }
@@ -510,8 +774,6 @@ h1, h2, h3, h4 {
 .tech-box .fa-database { color: #4479A1; }
 .tech-box .fa-git-alt { color: #F05032; }
 .tech-box .fa-github { color: #181717; }
-
-/* Optional: darken on hover */
 .tech-box:hover .fa-html5 { color: #cc3b1a; }
 .tech-box:hover .fa-css3-alt { color: #0d47a1; }
 .tech-box:hover .fa-js { color: #d4c700; }
@@ -521,8 +783,6 @@ h1, h2, h3, h4 {
 .tech-box:hover .fa-database { color: #2a5f7a; }
 .tech-box:hover .fa-git-alt { color: #c0401e; }
 .tech-box:hover .fa-github { color: #000000; }
-
-/* Responsive */
 @media (max-width: 600px) {
   .tech-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -879,25 +1139,8 @@ h1, h2, h3, h4 {
   color: #4f46e5;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- RESPONSIVE (additional) ---------- */
 @media (max-width: 992px) {
-  .hero .container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .hero-content {
-    align-items: center;
-  }
-  .hero-image {
-    justify-content: center;
-    order: -1;
-  }
-  .hero-image img {
-    max-width: 300px;
-  }
-  .hero-float {
-    display: none;
-  }
   .about-grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -908,111 +1151,10 @@ h1, h2, h3, h4 {
   .about-stats {
     justify-content: center;
   }
-  /* ---------- ABOUT: Horizontal Info Grid ---------- */
-.about-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* two columns */
-  gap: 0.5rem 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.about-info-item {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 0.95rem;
-  color: #1e293b;
-}
-
-.about-info-item i {
-  width: 32px;
-  height: 32px;
-  background: #eef2ff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4f46e5;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-}
-
-/* ---------- ABOUT: Buttons Side by Side ---------- */
-.about-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 1.2rem 0;
-}
-
-.btn-email {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 10px 24px;
-  background: #4f46e5;
-  color: #ffffff;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.25s ease;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn-email:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
-}
-
-.btn-email i {
-  font-size: 1.1rem;
-}
-
-/* Re-use existing .btn-secondary for Download CV */
-.about-buttons .btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 10px 24px;
-  background: transparent;
-  color: #1e293b;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: 1.5px solid #cbd5e1;
-  transition: all 0.25s;
-  text-decoration: none;
-}
-
-.about-buttons .btn-secondary:hover {
-  border-color: #4f46e5;
-  color: #4f46e5;
-  transform: translateY(-2px);
-}
-
-/* ---------- RESPONSIVE: Stack on mobile ---------- */
-@media (max-width: 600px) {
-  .about-info-grid {
-    grid-template-columns: 1fr;  /* single column on small screens */
-  }
-  .about-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .about-buttons .btn-email,
-  .about-buttons .btn-secondary {
-    text-align: center;
-    justify-content: center;
-  }
-}
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
 }
-
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -1041,8 +1183,19 @@ h1, h2, h3, h4 {
     font-size: 2rem;
   }
 }
-
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .about-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about-buttons .btn-email,
+  .about-buttons .btn-secondary {
+    text-align: center;
+    justify-content: center;
+  }
   .hero h1 {
     font-size: 2.2rem;
   }
@@ -1059,198 +1212,5 @@ h1, h2, h3, h4 {
   }
   .project-grid {
     grid-template-columns: 1fr;
-  }
-}
-/* ==================================================
-   BROWSER FRAGMENTS – Mock UI Background Elements
-   ================================================== */
-
-/* ---------- BASE FRAGMENT STYLES ---------- */
-.browser-fragment {
-  position: absolute;
-  z-index: 0; /* Behind content (z-index: 1 is content) */
-  pointer-events: none;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(79, 70, 229, 0.12);
-  box-shadow: 0 0 40px rgba(79, 70, 229, 0.04);
-  opacity: 0.35;
-  transition: opacity 0.3s ease;
-  overflow: hidden;
-}
-
-/* ---------- FRAGMENT 1: UPPER-LEFT ---------- */
-.fragment-1 {
-  top: 6%;
-  left: -1%;
-  width: 200px;
-  height: 150px;
-  transform: rotate(-4deg);
-  animation: floatFragment1 12s ease-in-out infinite;
-}
-@keyframes floatFragment1 {
-  0%, 100% { transform: rotate(-4deg) translate(0, 0); }
-  50% { transform: rotate(-2deg) translate(6px, -8px); }
-}
-
-/* ---------- FRAGMENT 2: LOWER-RIGHT ---------- */
-.fragment-2 {
-  bottom: 12%;
-  right: -1%;
-  width: 180px;
-  height: 140px;
-  transform: rotate(3deg);
-  animation: floatFragment2 14s ease-in-out infinite;
-}
-@keyframes floatFragment2 {
-  0%, 100% { transform: rotate(3deg) translate(0, 0); }
-  50% { transform: rotate(1deg) translate(-8px, 6px); }
-}
-
-/* ---------- FRAGMENT 3: FAR-RIGHT (Optional) ---------- */
-.fragment-3 {
-  top: 40%;
-  right: -2%;
-  width: 120px;
-  height: 100px;
-  transform: rotate(6deg);
-  animation: floatFragment3 10s ease-in-out infinite;
-  opacity: 0.2;
-}
-@keyframes floatFragment3 {
-  0%, 100% { transform: rotate(6deg) translate(0, 0); }
-  50% { transform: rotate(4deg) translate(-4px, 4px); }
-}
-
-/* ---------- BROWSER HEADER (title bar) ---------- */
-.browser-header {
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  border-bottom: 1px solid rgba(79, 70, 229, 0.06);
-  gap: 8px;
-}
-
-.browser-dots {
-  display: flex;
-  gap: 5px;
-  flex-shrink: 0;
-}
-.browser-dots .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.browser-dots .dot.red   { background: #ff5f56; }
-.browser-dots .dot.yellow{ background: #ffbd2e; }
-.browser-dots .dot.green { background: #27c93f; }
-
-.browser-url {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.55rem;
-  font-weight: 500;
-  color: #4f46e5;
-  opacity: 0.3;
-  letter-spacing: 0.3px;
-  margin-left: 4px;
-  white-space: nowrap;
-}
-
-/* ---------- BROWSER BODY (Mock UI) ---------- */
-.browser-body {
-  padding: 12px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* ---- Fragment 1 Mock UI (Card + Button) ---- */
-.mock-card {
-  background: rgba(79, 70, 229, 0.04);
-  border-radius: 6px;
-  padding: 8px 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  border: 1px solid rgba(79, 70, 229, 0.06);
-}
-.mock-card-bar {
-  height: 6px;
-  width: 60%;
-  background: #4f46e5;
-  border-radius: 4px;
-  opacity: 0.15;
-}
-.mock-card-line {
-  height: 4px;
-  width: 100%;
-  background: #4f46e5;
-  border-radius: 4px;
-  opacity: 0.08;
-}
-.mock-card-line.short {
-  width: 70%;
-}
-
-.mock-btn {
-  height: 20px;
-  width: 50%;
-  background: #4f46e5;
-  border-radius: 20px;
-  opacity: 0.1;
-  margin-top: 2px;
-  align-self: flex-start;
-}
-
-/* ---- Fragment 2 Mock UI (Dashboard Stats) ---- */
-.mock-dashboard {
-  display: flex;
-  gap: 8px;
-}
-.mock-stat {
-  flex: 1;
-  height: 30px;
-  background: rgba(79, 70, 229, 0.05);
-  border-radius: 6px;
-  border: 1px solid rgba(79, 70, 229, 0.06);
-}
-
-/* ---- Fragment 3 Mock UI (Input field) ---- */
-.mock-input {
-  height: 18px;
-  width: 100%;
-  background: rgba(79, 70, 229, 0.04);
-  border-radius: 4px;
-  border: 1px solid rgba(79, 70, 229, 0.06);
-}
-
-/* ---------- GLOW PULSE ANIMATION (Added to all fragments) ---------- */
-.browser-fragment {
-  animation: glowPulse 6s ease-in-out infinite;
-}
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 30px rgba(79, 70, 229, 0.03); }
-  50% { box-shadow: 0 0 50px rgba(79, 70, 229, 0.08); }
-}
-
-/* ---------- RESPONSIVE: Tablet ---------- */
-@media (max-width: 992px) {
-  .fragment-1 { width: 140px; height: 110px; opacity: 0.25; }
-  .fragment-2 { width: 120px; height: 100px; opacity: 0.25; }
-  .fragment-3 { display: none; }
-  .browser-body { padding: 8px 10px; }
-  .mock-card { padding: 4px 6px; }
-  .mock-btn { height: 14px; }
-  .mock-stat { height: 20px; }
-  .browser-url { font-size: 0.45rem; }
-}
-
-/* ---------- RESPONSIVE: Mobile ---------- */
-@media (max-width: 600px) {
-  .browser-fragment {
-    display: none; /* Hide completely to keep hero clean on small screens */
   }
 }
