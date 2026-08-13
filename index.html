@@ -42,77 +42,28 @@
       </button>
     </div>
   </nav>
-<!-- Hero -->
+  <!-- Hero Section -->
 <section class="hero" id="home">
-  <!-- Hero Background Texture Elements -->
-<div class="hero-blob hero-blob-1"></div>
-<div class="hero-blob hero-blob-2"></div>
-<div class="code-symbol">{ }</div>
-<div class="code-symbol">( )</div>
-<div class="code-symbol">[ ]</div>
-  <!-- Code Accent (behind everything) -->
-  <div class="code-accent" aria-hidden="true">&lt;/&gt;</div>
-<!-- Browser Fragment 1 – Upper Left -->
-<div class="browser-fragment fragment-1" aria-hidden="true">
-  <div class="browser-header">
-    <div class="browser-dots">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-    </div>
-    <div class="browser-url">/dev</div>
-  </div>
-  <div class="browser-body">
-    <div class="mock-card">
-      <div class="mock-card-bar"></div>
-      <div class="mock-card-line"></div>
-      <div class="mock-card-line short"></div>
-    </div>
-    <div class="mock-btn"></div>
-  </div>
-</div>
+  <!-- Background Decorative Shapes -->
+  <div class="hero-bg-shape shape-1"></div>
+  <div class="hero-bg-shape shape-2"></div>
+  <div class="hero-bg-shape shape-3"></div>
+  <div class="hero-dot dot-1"></div>
+  <div class="hero-dot dot-2"></div>
+  <div class="hero-dot dot-3"></div>
+  <div class="hero-curve curve-1"></div>
+  <div class="hero-curve curve-2"></div>
 
-<!-- Browser Fragment 2 – Lower Right -->
-<div class="browser-fragment fragment-2" aria-hidden="true">
-  <div class="browser-header">
-    <div class="browser-dots">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-    </div>
-    <div class="browser-url">/dashboard</div>
-  </div>
-  <div class="browser-body">
-    <div class="mock-dashboard">
-      <div class="mock-stat"></div>
-      <div class="mock-stat"></div>
-    </div>
-  </div>
-</div>
-
-<!-- Browser Fragment 3 – Optional (Far-right edge) – Uncomment if needed -->
-<div class="browser-fragment fragment-3" aria-hidden="true">
-  <div class="browser-header">
-    <div class="browser-dots">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-    </div>
-    <div class="browser-url">/settings</div>
-  </div>
-  <div class="browser-body">
-    <div class="mock-input"></div>
-  </div>
-</div>
-  <div class="container">
+  <div class="container hero-container">
+    <!-- Left Column: Content -->
     <div class="hero-content" data-aos="fade-up">
       <span class="hero-badge">Software Developer</span>
-      <h1>Hi, I'm <span class="highlight">Amar Delil</span></h1>
+      <h1>Hi, I'm <span class="gradient-text">Amar Delil</span></h1>
       <p class="tagline">Building practical, modern digital experiences.</p>
       <p class="desc">
-        I'm a passionate web developer based in Ethiopia, specializing in 
-        full‑stack solutions with a focus on clean, performant code and 
-        user‑centric design.
+        I'm a passionate full-stack web developer based in Ethiopia,
+        specializing in building clean, performant, and user-centered
+        web applications that solve real-world problems.
       </p>
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View My Work</a>
@@ -120,20 +71,21 @@
       </div>
       <div class="hero-social">
         <a href="https://github.com/amardelil" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <!-- Add other social links if needed (e.g., LinkedIn) -->
       </div>
     </div>
-    <div class="hero-image">
-      <img src="assets/images/profile/hero.webp" alt="Amar Delil – Software Developer" />
-      <!-- Floating icons with wrappers for parallax -->
-      <div class="float-wrapper" style="top: 8%; left: -5%; animation-delay: 0s;">
-        <div class="hero-float"><i class="fab fa-php"></i></div>
+
+    <!-- Right Column: Portrait -->
+    <div class="hero-portrait" data-aos="fade-left">
+      <div class="portrait-frame">
+        <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
       </div>
-      <div class="float-wrapper" style="bottom: 12%; right: -8%; animation-delay: 1.5s;">
-        <div class="hero-float"><i class="fab fa-js"></i></div>
-      </div>
-      <div class="float-wrapper" style="top: 20%; right: 0%; animation-delay: 3s;">
-        <div class="hero-float"><i class="fas fa-database"></i></div>
-      </div>
+      <!-- Floating Tech Icons -->
+      <div class="float-icon icon-php"><i class="fab fa-php"></i></div>
+      <div class="float-icon icon-react"><i class="fab fa-react"></i></div>
+      <div class="float-icon icon-js"><i class="fab fa-js"></i></div>
+      <div class="float-icon icon-mysql"><i class="fas fa-database"></i></div>
+      <div class="float-icon icon-git"><i class="fab fa-git-alt"></i></div>
     </div>
   </div>
 </section>
