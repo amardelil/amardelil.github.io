@@ -41,23 +41,25 @@
         <i class="fas fa-bars"></i>
       </button>
     </div>
-  </nav>
-  <!-- Hero Section -->
+  </nav><!-- Hero Section -->
 <section class="hero" id="home">
-  <!-- Background Decorative Shapes -->
-  <div class="hero-bg-shape shape-1"></div>
-  <div class="hero-bg-shape shape-2"></div>
-  <div class="hero-bg-shape shape-3"></div>
-  <div class="hero-dot dot-1"></div>
-  <div class="hero-dot dot-2"></div>
-  <div class="hero-dot dot-3"></div>
-  <div class="hero-curve curve-1"></div>
-  <div class="hero-curve curve-2"></div>
+  <!-- Background: grid + glowing code -->
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="code-glitch code-1">&lt;/&gt;</div>
+    <div class="code-glitch code-2">const dev = true;</div>
+    <div class="code-glitch code-3">function build() {</div>
+  </div>
 
   <div class="container hero-container">
-    <!-- Left Column: Content -->
-    <div class="hero-content" data-aos="fade-up">
-      <span class="hero-badge">Software Developer</span>
+    <!-- Top-left badge -->
+    <div class="hero-badge-wrapper">
+      <span class="status-dot"></span>
+      <span class="status-text">Available for Work</span>
+    </div>
+
+    <!-- Main content -->
+    <div class="hero-content">
       <h1>Hi, I'm <span class="gradient-text">Amar Delil</span></h1>
       <p class="tagline">Building practical, modern digital experiences.</p>
       <p class="desc">
@@ -70,22 +72,38 @@
         <a href="#contact" class="btn-secondary">Hire Me</a>
       </div>
       <div class="hero-social">
+        <span class="social-label">Let's connect</span>
         <a href="https://github.com/amardelil" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <!-- Add other social links if needed (e.g., LinkedIn) -->
+        <!-- Add more if needed -->
       </div>
     </div>
 
-    <!-- Right Column: Portrait -->
-    <div class="hero-portrait" data-aos="fade-left">
-      <div class="portrait-frame">
+    <!-- Profile area with glass cards -->
+    <div class="hero-profile">
+      <!-- Left glass card (tech icons) -->
+      <div class="glass-card card-left">
+        <i class="fab fa-react"></i>
+        <i class="fab fa-node"></i>
+        <i class="fab fa-python"></i>
+      </div>
+
+      <!-- Circular avatar -->
+      <div class="profile-frame">
         <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
       </div>
-      <!-- Floating Tech Icons -->
-      <div class="float-icon icon-php"><i class="fab fa-php"></i></div>
-      <div class="float-icon icon-react"><i class="fab fa-react"></i></div>
-      <div class="float-icon icon-js"><i class="fab fa-js"></i></div>
-      <div class="float-icon icon-mysql"><i class="fas fa-database"></i></div>
-      <div class="float-icon icon-git"><i class="fab fa-git-alt"></i></div>
+
+      <!-- Right glass card (code snippet) -->
+      <div class="glass-card card-right">
+        <code>const developer = true;</code>
+      </div>
+    </div>
+
+    <!-- Bottom tech logos -->
+    <div class="tech-logos">
+      <span><i class="fab fa-github"></i> GitHub</span>
+      <span><i class="fas fa-code"></i> VS Code</span>
+      <span><i class="fab fa-docker"></i> Docker</span>
+      <span><i class="fab fa-aws"></i> AWS</span>
     </div>
   </div>
 </section>
