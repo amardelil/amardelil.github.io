@@ -383,8 +383,8 @@ h1, h2, h3, h4 {
 .portrait-wrapper {
   position: relative;
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 1/1;
+ max-width: 480px;
+   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,17 +398,17 @@ h1, h2, h3, h4 {
   pointer-events: none;
 }
 .ring-1 {
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
+   width: 130%; /* was 120% */
+  height: 130%;
+  top: -15%;
+  left: -15%;
   animation: ringSpin 20s linear infinite;
 }
 .ring-2 {
-  width: 140%;
-  height: 140%;
-  top: -20%;
-  left: -20%;
+   width: 160%; /* was 140% */
+  height: 160%;
+  top: -30%;
+  left: -30%;
   border-color: rgba(124, 58, 237, 0.06);
   animation: ringSpin 30s linear infinite reverse;
 }
@@ -438,42 +438,82 @@ h1, h2, h3, h4 {
 }
 
 /* Floating tech icons – ONLY THREE */
+/* ---------- INDIVIDUAL FLOATING TECH ICON CARDS ---------- */
 .float-icon {
   position: absolute;
   z-index: 3;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.6);
-  font-size: 1.6rem;
-  color: #4f46e5;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: floatIcon 6s ease-in-out infinite;
-}
-.icon-html {
-  top: 5%;
-  left: -5%;
-  animation-delay: 0s;
-}
-.icon-css {
-  top: 15%;
-  right: -5%;
-  animation-delay: 2s;
-}
-.icon-js {
-  bottom: 10%;
-  left: 0%;
-  animation-delay: 4s;
-}
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(3deg); }
+  width: 48px;
+  height: 48px;
 }
 
+/* Positioning – adjusted for enlarged portrait */
+.icon-php {
+  top: 2%;
+  left: -2%;
+  animation-delay: 0s;
+}
+.icon-html {
+  top: 2%;
+  right: -2%;
+  animation-delay: 1s;
+}
+.icon-css {
+  top: 25%;
+  right: -6%;
+  animation-delay: 2s;
+}
+.icon-mysql {
+  bottom: 8%;
+  right: -2%;
+  animation-delay: 3s;
+}
+
+/* Keep original brand colors */
+.icon-html i { color: #E34F26; }
+.icon-css i { color: #1572B6; }
+.icon-mysql i { color: #4479A1; }
+.icon-php i { color: #777BB4; }
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+/* ---------- IMPROVED CODE SNIPPET (syntax highlighted) ---------- */
+.glass-card.card-code {
+  position: absolute;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  /* Position: keep it on the left of portrait, as before */
+  left: -20%;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+/* Syntax colors – fit the light portfolio theme */
+.card-code .kw { color: #4f46e5; font-weight: 600; }   /* keyword – blue */
+.card-code .id { color: #0891b2; }                      /* variable – teal */
+.card-code .op { color: #475569; }                      /* operator – gray */
+.card-code .bool { color: #b45309; }                    /* boolean – amber */
+.card-code .punc { color: #64748b; }                    /* punctuation – slate */
 /* Individual brand colors (optional) */
 .icon-html i { color: #E34F26; }
 .icon-css i { color: #1572B6; }
