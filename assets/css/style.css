@@ -147,7 +147,7 @@ h1, h2, h3, h4 {
   border: none;
 }
 /* ==================================================
-   HERO – Premium Dark Grid Tech
+   HERO – Premium Light Grid with Large Profile
    ================================================== */
 
 .hero {
@@ -155,49 +155,21 @@ h1, h2, h3, h4 {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 100px 0 60px;
-  background: #0b0b1a;
+  padding: 120px 0 60px;
+  background: #f8faff;
   overflow: hidden;
 }
 
-/* ---------- BACKGROUND LAYER ---------- */
-.hero-bg {
+/* ---------- BACKGROUND GRID ---------- */
+.hero-grid {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 30% 40%, #1a1a3e 0%, #0b0b1a 70%);
-}
-
-/* Digital Grid */
-.grid-overlay {
-  position: absolute;
-  inset: 0;
   background-image:
-    linear-gradient(rgba(79, 70, 229, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(79, 70, 229, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Glowing code snippets in distance */
-.code-glitch {
-  position: absolute;
-  font-family: 'Courier New', monospace;
-  color: #4f46e5;
-  opacity: 0.06;
-  font-size: 4rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  animation: glitchFloat 20s ease-in-out infinite;
-}
-.code-1 { top: 10%; left: 5%; animation-delay: 0s; }
-.code-2 { bottom: 15%; right: 8%; animation-delay: -5s; }
-.code-3 { top: 45%; right: 20%; animation-delay: -10s; font-size: 3rem; }
-
-@keyframes glitchFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.06; }
-  50% { transform: translate(10px, -15px) scale(1.02); opacity: 0.10; }
+    linear-gradient(rgba(79, 70, 229, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
 /* ---------- CONTAINER ---------- */
@@ -220,12 +192,13 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.6);
   padding: 6px 16px 6px 12px;
   border-radius: 40px;
   border: 1px solid rgba(79, 70, 229, 0.15);
   width: fit-content;
   backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 
 .status-dot {
@@ -244,7 +217,7 @@ h1, h2, h3, h4 {
 .status-text {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #e2e8f0;
+  color: #1e293b;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -259,12 +232,12 @@ h1, h2, h3, h4 {
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
   margin: 0;
   line-height: 1.1;
 }
 .gradient-text {
-  background: linear-gradient(135deg, #818cf8, #a78bfa);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -272,12 +245,12 @@ h1, h2, h3, h4 {
 
 .hero .tagline {
   font-size: 1.2rem;
-  color: #94a3b8;
+  color: #475569;
   font-weight: 400;
   margin: 0;
 }
 .hero .desc {
-  color: #94a3b8;
+  color: #475569;
   max-width: 480px;
   font-size: 1.05rem;
   line-height: 1.7;
@@ -306,23 +279,23 @@ h1, h2, h3, h4 {
 .btn-primary:hover {
   background: #4338ca;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.25);
 }
 
 .btn-secondary {
   display: inline-block;
   background: transparent;
-  color: #e2e8f0;
+  color: #1e293b;
   padding: 12px 32px;
   border-radius: 40px;
   font-weight: 600;
-  border: 1.5px solid #4b5563;
+  border: 1.5px solid #cbd5e1;
   transition: all 0.25s;
   text-decoration: none;
 }
 .btn-secondary:hover {
-  border-color: #818cf8;
-  color: #818cf8;
+  border-color: #4f46e5;
+  color: #4f46e5;
   transform: translateY(-2px);
 }
 
@@ -334,28 +307,28 @@ h1, h2, h3, h4 {
 }
 .social-label {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #475569;
   font-weight: 400;
 }
 .hero-social a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e2e8f0;
+  color: #1e293b;
   font-size: 1.2rem;
   transition: all 0.25s;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid #e2e8f0;
   text-decoration: none;
 }
 .hero-social a:hover {
   background: #4f46e5;
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.2);
 }
 
 /* ---------- PROFILE AREA ---------- */
@@ -364,15 +337,17 @@ h1, h2, h3, h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 }
 
+/* Large Profile Frame */
 .profile-frame {
-  width: 240px;
-  height: 240px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-  padding: 4px;
+  padding: 5px;
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  box-shadow: 0 0 60px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 0 60px rgba(79, 70, 229, 0.12);
 }
 .profile-frame img {
   width: 100%;
@@ -380,60 +355,72 @@ h1, h2, h3, h4 {
   object-fit: cover;
   border-radius: 50%;
   display: block;
-  background: #0b0b1a;
+  background: #fff;
 }
 
-/* Glass cards */
+/* Floating Glass Cards */
 .glass-card {
   position: absolute;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  padding: 10px 14px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 1rem;
-  color: #e2e8f0;
+  color: #1e293b;
   white-space: nowrap;
 }
 
-.card-left {
-  left: -10%;
-  top: 20%;
+/* Code snippet card – left of profile */
+.card-code {
+  left: -15%;
+  top: 30%;
   transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(79, 70, 229, 0.15);
 }
-.card-left i {
-  font-size: 1.5rem;
-  color: #818cf8;
+.card-code code {
+  font-family: 'Courier New', monospace;
+  color: #4f46e5;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-.card-right {
-  right: -10%;
+/* Tech icons card – right of profile */
+.card-tech {
+  right: -15%;
   top: 60%;
   transform: translateY(-50%);
+  gap: 12px;
+  padding: 10px 16px;
 }
-.card-right code {
-  font-family: 'Courier New', monospace;
-  color: #a78bfa;
-  font-size: 0.85rem;
+.card-tech i {
+  font-size: 1.6rem;
+  color: #4f46e5;
 }
+/* Individual tech colors */
+.card-tech .fa-html5 { color: #E34F26; }
+.card-tech .fa-css3-alt { color: #1572B6; }
+.card-tech .fa-database { color: #4479A1; }
+.card-tech .fa-php { color: #777BB4; }
 
 /* ---------- BOTTOM TECH LOGOS ---------- */
 .tech-logos {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
   margin-top: 2rem;
   opacity: 0.5;
 }
 .tech-logos span {
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #475569;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -441,7 +428,7 @@ h1, h2, h3, h4 {
 }
 .tech-logos i {
   font-size: 1.2rem;
-  color: #818cf8;
+  color: #4f46e5;
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -468,16 +455,17 @@ h1, h2, h3, h4 {
   }
   .hero-profile {
     order: -1;
+    padding: 20px 0;
   }
   .profile-frame {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   }
   .glass-card {
-    display: none; /* hide on tablet/mobile to avoid clutter */
+    display: none; /* hide on tablet to avoid clutter */
   }
   .tech-logos {
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
 }
 
@@ -486,9 +474,8 @@ h1, h2, h3, h4 {
   .hero .tagline { font-size: 1rem; }
   .hero-buttons { flex-direction: column; align-items: stretch; }
   .btn-primary, .btn-secondary { text-align: center; }
-  .profile-frame { width: 140px; height: 140px; }
+  .profile-frame { width: 160px; height: 160px; }
   .tech-logos span { font-size: 0.7rem; }
-  .code-glitch { display: none; }
 }
 /* ---------- ABOUT ---------- */
 .about {

@@ -41,15 +41,11 @@
         <i class="fas fa-bars"></i>
       </button>
     </div>
-  </nav><!-- Hero Section -->
+  </nav>
+  <!-- Hero Section -->
 <section class="hero" id="home">
-  <!-- Background: grid + glowing code -->
-  <div class="hero-bg">
-    <div class="grid-overlay"></div>
-    <div class="code-glitch code-1">&lt;/&gt;</div>
-    <div class="code-glitch code-2">const dev = true;</div>
-    <div class="code-glitch code-3">function build() {</div>
-  </div>
+  <!-- Background Grid -->
+  <div class="hero-grid"></div>
 
   <div class="container hero-container">
     <!-- Top-left badge -->
@@ -58,7 +54,7 @@
       <span class="status-text">Available for Work</span>
     </div>
 
-    <!-- Main content -->
+    <!-- Left Column: Text -->
     <div class="hero-content">
       <h1>Hi, I'm <span class="gradient-text">Amar Delil</span></h1>
       <p class="tagline">Building practical, modern digital experiences.</p>
@@ -78,27 +74,28 @@
       </div>
     </div>
 
-    <!-- Profile area with glass cards -->
+    <!-- Right Column: Profile with Floating Cards -->
     <div class="hero-profile">
-      <!-- Left glass card (tech icons) -->
-      <div class="glass-card card-left">
-        <i class="fab fa-react"></i>
-        <i class="fab fa-node"></i>
-        <i class="fab fa-python"></i>
+      <!-- Code snippet card (left of profile) -->
+      <div class="glass-card card-code">
+        <code>const developer = true;</code>
       </div>
 
-      <!-- Circular avatar -->
+      <!-- Large Profile Image -->
       <div class="profile-frame">
         <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
       </div>
 
-      <!-- Right glass card (code snippet) -->
-      <div class="glass-card card-right">
-        <code>const developer = true;</code>
+      <!-- Tech icons card (right of profile, or below/above) -->
+      <div class="glass-card card-tech">
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-css3-alt"></i>
+        <i class="fas fa-database"></i> <!-- MySQL -->
+        <i class="fab fa-php"></i>
       </div>
     </div>
 
-    <!-- Bottom tech logos -->
+    <!-- Bottom Tech Logos -->
     <div class="tech-logos">
       <span><i class="fab fa-github"></i> GitHub</span>
       <span><i class="fas fa-code"></i> VS Code</span>
@@ -107,6 +104,7 @@
     </div>
   </div>
 </section>
+ 
   <!-- About -->
   <section class="about" id="about">
     <div class="container">
