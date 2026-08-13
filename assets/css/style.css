@@ -154,8 +154,34 @@ h1, h2, h3, h4 {
   align-items: center;
   padding: 120px 0 80px;
   background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 50%, #f8fafc 100%);
-  position: relative;
+   position: relative;
   overflow: hidden;
+}
+.code-accent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(12rem, 30vw, 28rem);
+  font-weight: 900;
+  color: #4f46e5;            /* blue/purple accent */
+  opacity: 0.04;             /* extremely faint */
+  pointer-events: none;
+  z-index: 0;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  /* Floating + opacity pulse */
+  animation: accentFloat 6s ease-in-out infinite,
+             accentPulse 4s ease-in-out infinite;
+}
+@keyframes accentFloat {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translateY(-8px); }
+}
+
+@keyframes accentPulse {
+  0%, 100% { opacity: 0.04; }
+  50% { opacity: 0.08; }
 }
 .hero .container {
   display: grid;
@@ -278,6 +304,24 @@ h1, h2, h3, h4 {
     0 0 60px rgba(139, 92, 246, 0.08);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   animation: floatImage 6s ease-in-out infinite;
+  animation: glowPulse 5s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 30px rgba(79, 70, 229, 0.15),
+      0 0 60px rgba(139, 92, 246, 0.08);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(79, 70, 229, 0.35),
+      0 0 80px rgba(139, 92, 246, 0.18);
+  }
+}
+.hero-float,
+.code-accent {
+  will-change: transform;
+  transition: transform 0.1s ease-out; /* smooth movement */
 }
 @keyframes floatImage {
   0%, 100% { transform: translateY(0px); }
@@ -289,7 +333,40 @@ h1, h2, h3, h4 {
     0 0 80px rgba(139, 92, 246, 0.15);
   transform: scale(1.02);
 }
+/* ---------- FLOATING ICON WRAPPER ---------- */
+.float-wrapper {
+  position: absolute;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  z-index: 1;
+}
 
+/* The icon itself – static with no transform, but we add a float animation via the wrapper */
+.hero-float {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  font-size: 1.8rem;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  /* Float animation moved to wrapper */
+}
+
+/* Float animation on wrapper */
+.float-wrapper {
+  animation: floatIcon 6s ease-in-out infinite;
+}
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+/* Different delays for each wrapper via inline style? We can set them in HTML or use nth-child */
+/* We'll set inline style for animation-delay in HTML */
 /* Floating tech icons */
 .hero-float {
   position: absolute;

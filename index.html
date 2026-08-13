@@ -42,31 +42,44 @@
       </button>
     </div>
   </nav>
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content" data-aos="fade-up">
-        <span class="hero-badge">Software Developer</span>
-        <h1>Hi, I'm <span class="highlight">Amar Delil</span></h1>
-        <p class="tagline">Building practical, modern digital experiences.</p>
-        <p class="desc">
-          I'm a passionate web developer based in Ethiopia, specializing in
-          full-stack solutions with a focus on clean, performant code and
-          user-centric design.
-        </p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">View My Work</a>
-          <a href="#contact" class="btn-secondary">Hire Me</a>
-        </div>
+<!-- Hero -->
+<section class="hero" id="home">
+  <!-- Code Accent (behind everything) -->
+  <div class="code-accent" aria-hidden="true">&lt;/&gt;</div>
+
+  <div class="container">
+    <div class="hero-content" data-aos="fade-up">
+      <span class="hero-badge">Software Developer</span>
+      <h1>Hi, I'm <span class="highlight">Amar Delil</span></h1>
+      <p class="tagline">Building practical, modern digital experiences.</p>
+      <p class="desc">
+        I'm a passionate web developer based in Ethiopia, specializing in 
+        full‑stack solutions with a focus on clean, performant code and 
+        user‑centric design.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Hire Me</a>
       </div>
-      <div class="hero-image">
-        <img src="assets/images/profile/hero.webp" alt="Amar Delil | Software Developer" />
-        <div class="hero-float" style="top: 8%; left: -8%;"><i class="fab fa-php"></i></div>
-        <div class="hero-float" style="bottom: 12%; right: -6%;"><i class="fab fa-js"></i></div>
-        <div class="hero-float" style="top: 18%; right: 6%;"><i class="fas fa-database"></i></div>
+      <div class="hero-social">
+        <a href="https://github.com/amardelil" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>
-  </section>
+    <div class="hero-image">
+      <img src="assets/images/profile/hero.webp" alt="Amar Delil – Software Developer" />
+      <!-- Floating icons with wrappers for parallax -->
+      <div class="float-wrapper" style="top: 8%; left: -5%; animation-delay: 0s;">
+        <div class="hero-float"><i class="fab fa-php"></i></div>
+      </div>
+      <div class="float-wrapper" style="bottom: 12%; right: -8%; animation-delay: 1.5s;">
+        <div class="hero-float"><i class="fab fa-js"></i></div>
+      </div>
+      <div class="float-wrapper" style="top: 20%; right: 0%; animation-delay: 3s;">
+        <div class="hero-float"><i class="fas fa-database"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- About -->
   <section class="about" id="about">
     <div class="container">
