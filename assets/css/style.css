@@ -159,10 +159,10 @@ h1, h2, h3, h4 {
       stretched or cramped on a standard desktop viewport */
 .hero {
   position: relative;
-  min-height: 92vh;              /* was 100vh */
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 0 100px;        /* was 130px 0 80px — more bottom room */
+  padding: 110px 0 40px; /* was 130px 0 80px – more compact */
   background: #f5f0ff;
   overflow: hidden;
   z-index: 1;
@@ -170,10 +170,10 @@ h1, h2, h3, h4 {
 
 /* 2. Background code — a touch more visible, still subtle */
 .code-1 {
-  top: 20%;
-  right: 10%;
-  font-size: 2.2rem;
-  opacity: 0.24;                 /* was 0.18 */
+  top: 18%;
+  right: 8%;
+  font-size: 2rem;
+  opacity: 0.15; /* was 0.18 – still visible but soft */
   transform: rotate(-3deg);
 }
 .code-2 {
@@ -193,48 +193,64 @@ h1, h2, h3, h4 {
 
 /* 3. Portrait — reduced ~8% */
 .portrait-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 515px;              /* was 560px (~8% smaller) */
+  max-width: 500px; /* was 560px – still large but safe */
   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 /* 4. Decorative rings — dialed back to atmospheric, not distracting */
 .ring-1 {
-  width: 130%;
-  height: 130%;
-  top: -15%;
-  left: -15%;
+   width: 120%;  /* was 130% */
+  height: 120%;
+  top: -10%;
+  left: -10%;
   border-color: rgba(79, 70, 229, 0.06);   /* was 0.1 */
   animation: ringSpin 20s linear infinite;
 }
 .ring-2 {
-  width: 160%;
-  height: 160%;
-  top: -30%;
-  left: -30%;
+   width: 145%;  /* was 160% */
+  height: 145%;
+  top: -22%;
+  left: -22%;
   border-color: rgba(124, 58, 237, 0.035); /* was 0.06 */
   animation: ringSpin 30s linear infinite reverse;
 }
 
 /* 5. Floating tech icons — tighter, balanced orbit around the
       portrait edge instead of spread out. Exactly HTML5 / CSS3 / JS. */
+.float-icon {
+  position: absolute;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  padding: 8px; /* slightly smaller */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatIcon 6s ease-in-out infinite;
+  width: 42px;
+  height: 42px;
+}
 .icon-html {
-  top: 4%;
-  right: 8%;
+  top: 0%;
+  right: -2%;
   animation-delay: 0s;
 }
 .icon-css {
-  top: 46%;
-  right: -2%;
+  top: 30%;
+  right: -6%;
   animation-delay: 1.5s;
 }
 .icon-js {
-  bottom: 6%;
-  left: 10%;
+  bottom: 4%;
+  left: -4%;
   animation-delay: 3s;
 }
 
@@ -242,20 +258,21 @@ h1, h2, h3, h4 {
       sent behind the portrait in stacking order, kept beside it */
 .glass-card.card-code {
   position: absolute;
-  z-index: 1;                    /* was 3 — now sits behind the portrait (z-index: 2) */
+  z-index: 3;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(6px);
   border-radius: 12px;
-  padding: 10px 16px;
+  padding: 8px 14px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.6);
   font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   white-space: nowrap;
-  left: -32%;                    /* was -20% */
-  top: 10%;                      /* was 45% — clears the JS icon at bottom-left */
-  transform: none;               /* was translateY(-50%) */
+  left: -18%;
+  top: 45%;
+  transform: translateY(-50%);
 }
+.code-1 {
 
 /* 7. Hire Me button — better contrast, same outlined style */
 .btn-secondary {
