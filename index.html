@@ -42,44 +42,52 @@
       </button>
     </div>
   </nav>
-  <!-- ==================================================
-     HERO – Premium Light Gradient with Mountain Layers
-     ================================================== -->
+ <!-- ==================================================
+   HERO – Premium Light Theme with Code Terminal
+   ================================================== -->
 <section class="hero" id="home">
-  <!-- Background layers -->
-  <div class="hero-background">
-    <!-- Mountain/wave layers (opacity reduced) -->
-    <div class="mountain-layer layer-1"></div>
-    <div class="mountain-layer layer-2"></div>
-    <div class="mountain-layer layer-3"></div>
+  <!-- Background glowing blobs (soft) -->
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
 
-    <!-- REFINED: Background code with syntax highlighting (more visible) -->
-    <div class="code-fragment code-1">
-      <span class="code-kw">const</span>
-      <span class="code-var">developer</span>
-      <span class="code-op">=</span>
-      <span class="code-bool">true</span>
-      <span class="code-punc">;</span>
-    </div>
-    <div class="code-fragment code-2">function buildExperience() {}</div>
-    <div class="code-fragment code-3">&lt;FullStack /&gt;</div>
-  </div>
+  <div class="hero-container">
+    <!-- Left Column: Content -->
+    <div class="hero-content">
+      <!-- Badge: const developer = true -->
+      <div class="status-badge">
+        <span class="code-text">const developer = true;</span>
+      </div>
 
-  <div class="container hero-container">
-    <!-- LEFT COLUMN (UNCHANGED) -->
-    <div class="hero-left">
-      <div class="hero-badge">Software Developer</div>
-      <h1>Hi, I'm <span class="gradient-text">Amar Delil</span></h1>
-      <p class="tagline">Building practical, modern digital experiences.</p>
-      <p class="desc">
+      <!-- Main Heading -->
+      <h1 class="hero-title">
+        Hi, I'm <span class="highlight">Amar Delil</span>
+      </h1>
+      <p class="hero-subtitle">
+        Building practical, modern digital experiences.
+      </p>
+      <p class="hero-description">
         I'm a passionate full-stack web developer based in Ethiopia,
         specializing in building clean, performant, and user-centered
         web applications that solve real-world problems.
       </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn-primary">View My Work →</a>
-        <a href="#contact" class="btn-secondary">Hire Me</a>
+
+      <!-- CTA Buttons -->
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View My Work →</a>
+        <a href="#contact" class="btn btn-secondary">Hire Me</a>
       </div>
+
+      <!-- Tech Stack Icons (below CTAs) -->
+      <div class="tech-stack">
+        <span class="stack-label">Tech Stack</span>
+        <div class="stack-icons">
+          <span class="icon-wrapper html"><i class="fab fa-html5"></i></span>
+          <span class="icon-wrapper css"><i class="fab fa-css3-alt"></i></span>
+          <span class="icon-wrapper js"><i class="fab fa-js"></i></span>
+        </div>
+      </div>
+
+      <!-- Social Links -->
       <div class="hero-social">
         <span class="social-label">Let's connect</span>
         <a href="https://github.com/amardelil" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -88,36 +96,29 @@
       </div>
     </div>
 
-    <!-- RIGHT COLUMN – Enlarged Portrait + THREE Icons -->
-    <div class="hero-right">
-      <div class="portrait-wrapper">
-        <!-- Decorative rings (scaled proportionally) -->
-        <div class="portrait-ring ring-1"></div>
-        <div class="portrait-ring ring-2"></div>
-
-        <!-- Enlarged portrait frame -->
-        <div class="portrait-frame">
-          <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
+    <!-- Right Column: Profile + Code Terminal -->
+    <div class="hero-visual">
+      <!-- Code Terminal (background element) -->
+      <div class="code-terminal">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="terminal-title">server.js — Bun</span>
         </div>
+        <pre class="terminal-body"><code><span class="keyword">const</span> { <span class="function">serve</span> } = <span class="function">require</span>(<span class="string">'bun'</span>);
 
-        <!-- REFINED: THREE floating tech icons (JS, HTML, CSS) -->
-        <!-- Top-right: HTML5 -->
-        <div class="float-icon icon-html"><i class="fab fa-html5"></i></div>
-        <!-- Middle-right: CSS3 -->
-        <div class="float-icon icon-css"><i class="fab fa-css3-alt"></i></div>
-        <!-- Bottom-left: JavaScript -->
-        <div class="float-icon icon-js"><i class="fab fa-js"></i></div>
+<span class="function">serve</span>({
+  port: <span class="number">3000</span>,
+  <span class="function">fetch</span>(request) {
+    <span class="keyword">return new</span> <span class="predict">Response</span>(<span class="string">"Hello, Bun!"</span>);
+  },
+});</code></pre>
+      </div>
 
-        <!-- Code snippet card (syntax highlighted) – position adjusted -->
-        <div class="glass-card card-code">
-          <code>
-            <span class="kw">const</span>
-            <span class="id">developer</span>
-            <span class="op">=</span>
-            <span class="bool">true</span>
-            <span class="punc">;</span>
-          </code>
-        </div>
+      <!-- Profile Frame with thin elegant ring -->
+      <div class="profile-frame">
+        <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
       </div>
     </div>
   </div>
