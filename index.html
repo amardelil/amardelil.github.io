@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,7 +36,6 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-
       </ul>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
         <i class="fas fa-bars"></i>
@@ -50,32 +48,26 @@
 <section class="hero" id="home">
   <!-- Background grid overlay -->
   <div class="hero-bg-grid"></div>
-
   <div class="container hero-container">
     <div class="hero-left">
       <!-- Tech stack badge -->
       <div class="hero-badge">Full‑Stack Developer</div>
-
       <!-- Name -->
       <h1>Hi, I'm <span class="highlight-name">Amar Delil</span></h1>
-
       <!-- Tagline -->
       <p class="hero-tagline">
         I build practical, modern digital experiences using full‑stack technologies.
       </p>
-
       <!-- Description -->
       <p class="hero-desc">
         I'm a passionate web developer based in Ethiopia, specializing in
         building clean, performant, and user‑centered web applications.
       </p>
-
       <!-- CTA Buttons -->
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View Projects</a>
         <a href="#contact" class="btn-secondary">Let's Collaborate →</a>
       </div>
-
       <!-- Social -->
       <div class="hero-social">
         <a href="https://github.com/amardelil" target="_blank"><i class="fab fa-github"></i></a>
@@ -84,14 +76,36 @@
       </div>
     </div>
 
-    <!-- Right side – profile image with subtle glow -->
+    <!-- Right side – profile image with orbiting tech badges -->
     <div class="hero-right">
-      <div class="profile-frame">
-        <img src="assets/images/profile/hero.webp" alt="Amar Delil">
+      <div class="profile-orbit">
+
+        <!-- connecting lines, drawn behind everything -->
+        <svg class="orbit-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line class="orbit-line" x1="50" y1="50" x2="9"  y2="12" />
+          <line class="orbit-line" x1="50" y1="50" x2="86" y2="7"  />
+          <line class="orbit-line" x1="50" y1="50" x2="101" y2="47" />
+          <line class="orbit-line" x1="50" y1="50" x2="89" y2="90" />
+          <line class="orbit-line" x1="50" y1="50" x2="10" y2="86" />
+          <line class="orbit-line" x1="50" y1="50" x2="-3" y2="50" />
+        </svg>
+
+        <div class="profile-frame">
+          <img src="assets/images/profile/hero.webp" alt="Amar Delil">
+        </div>
+
+        <div class="orbit-icon icon-react"      aria-hidden="true"><i class="fab fa-react"></i></div>
+        <div class="orbit-icon icon-node"       aria-hidden="true"><i class="fab fa-node-js"></i></div>
+        <div class="orbit-icon icon-db"         aria-hidden="true"><i class="fas fa-database"></i></div>
+        <div class="orbit-icon icon-cloud"      aria-hidden="true"><i class="fas fa-cloud"></i></div>
+        <div class="orbit-icon icon-git"        aria-hidden="true"><i class="fab fa-git-alt"></i></div>
+        <div class="orbit-icon icon-code"       aria-hidden="true"><i class="fas fa-code"></i></div>
+
       </div>
     </div>
   </div>
 </section>
+
   <!-- About -->
   <section class="about" id="about">
     <div class="container">
