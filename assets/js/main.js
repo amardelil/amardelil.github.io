@@ -46,29 +46,53 @@ window.addEventListener('scroll', function() {
     navbar.classList.remove('scrolled');
   }
 });
-
-// Contact form submission (demo)
+// ---------- CONTACT FORM (EmailJS) ----------
 const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+// Replace these with your actual EmailJS keys
+const SERVICE_ID = 'YOUR_SERVICE_ID';      // e.g., 'service_abc123'
+const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';    // e.g., 'template_xyz789'
+const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';      // e.g., 'user_abc123'
+
+// Initialize EmailJS
+emailjs.init(PUBLIC_KEY);
+
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Thank you for your message, Amar will get back to you soon!');
-    this.reset();
-  });
-  // Animate skill progress bars on scroll
-const skillBars = document.querySelectorAll('.progress-fill');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const bar = entry.target;
-      const targetWidth = bar.style.width; // store the target width
-      bar.style.width = '0'; // reset to 0
-      setTimeout(() => {
-        bar.style.width = targetWidth; // animate to target
-      }, 100);
-    }
-  });
-}, { threshold: 0.3 });
 
-skillBars.forEach(bar => observer.observe(bar));
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Show loading status
+    formStatus.style.display = 'block';
+    formStatus.style.color = 'var(--text-secondary)';
+    formStatus.textContent = 'Sending message...';
+
+    // Send email via EmailJS
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+      from_name: name,
+      from_email: email,
+      subject: subject || 'New message from portfolio',
+      message: message,
+      to_name: 'Amar Delil'
+    })
+    .then(function(response) {
+      formStatus.style.color = '#22c55e';
+      formStatus.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
+      contactForm.reset();
+      setTimeout(() => {
+        formStatus.style.display = 'none';
+      }, 5000);
+    })
+    .catch(function(error) {
+      formStatus.style.color = '#ef4444';
+      formStatus.textContent = '❌ Failed to send message. Please try again later.';
+      console.error('EmailJS Error:', error);
+    });
+  });
 }
