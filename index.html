@@ -43,56 +43,50 @@
     </div>
   </nav>
  <!-- ==================================================
-   HERO – FINAL ATTRACTIVE PROFESSIONAL VERSION
+   HERO – FINAL WITH BIGGER PROFILE & CODE BACKGROUND
    ================================================== -->
 <section class="hero" id="home">
-  <!-- Background mountain layers -->
-  <div class="hero-bg">
-    <div class="mountain-layer layer-1"></div>
-    <div class="mountain-layer layer-2"></div>
-    <div class="mountain-layer layer-3"></div>
+  <!-- Background: simple gradient (no mountains) -->
+  <div class="hero-bg"></div>
+
+  <!-- Background Code Terminal (subtle) -->
+  <div class="bg-code-terminal">
+    <div class="terminal-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="terminal-title">server.js — Bun</span>
+    </div>
+    <pre class="terminal-body"><code><span class="keyword">const</span> { <span class="function">serve</span> } = <span class="function">require</span>(<span class="string">'bun'</span>);
+
+<span class="function">serve</span>({
+  port: <span class="number">3000</span>,
+  <span class="function">fetch</span>(request) {
+    <span class="keyword">return new</span> <span class="predict">Response</span>(<span class="string">'Hello World'</span>);
+  }
+});</code></pre>
   </div>
 
   <div class="container hero-container">
     <!-- LEFT COLUMN -->
     <div class="hero-left">
-      <!-- Badge -->
       <div class="hero-badge">Software Developer</div>
-
-      <!-- Headline -->
       <h1>Hi, I'm <span class="gradient-text">Amar Delil</span></h1>
-
-      <!-- Tagline -->
       <p class="tagline">Building practical, modern digital experiences.</p>
-
-      <!-- Description -->
       <p class="desc">
         I'm a passionate full-stack web developer based in Ethiopia,
         specializing in building clean, performant, and user-centered
         web applications that solve real-world problems.
       </p>
-
-      <!-- CTA Buttons -->
       <div class="hero-buttons">
         <a href="#projects" class="btn-primary">View My Work →</a>
         <a href="#contact" class="btn-secondary">Hire Me</a>
       </div>
-
-      <!-- Social Links -->
       <div class="hero-social">
         <span class="social-label">Let's connect</span>
         <a href="https://github.com/amardelil" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/amardelil" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="mailto:programmeramardelil21@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      </div>
-
-      <!-- Code badge at bottom -->
-      <div class="code-badge">
-        <span class="code-keyword">const</span>
-        <span class="code-variable">developer</span>
-        <span class="code-operator">=</span>
-        <span class="code-boolean">true</span>
-        <span class="code-punctuation">;</span>
       </div>
     </div>
 
@@ -103,12 +97,12 @@
         <div class="ring ring-1"></div>
         <div class="ring ring-2"></div>
 
-        <!-- Profile Image -->
+        <!-- Profile Image (larger) -->
         <div class="profile-frame">
           <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
         </div>
 
-        <!-- Floating Tech Icons -->
+        <!-- Floating Tech Icons – balanced positions -->
         <div class="float-icon icon-html"><i class="fab fa-html5"></i></div>
         <div class="float-icon icon-css"><i class="fab fa-css3-alt"></i></div>
         <div class="float-icon icon-js"><i class="fab fa-js"></i></div>
