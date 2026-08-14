@@ -315,8 +315,8 @@ h1, h2, h3, h4 {
   align-items: center;
 }
 .profile-frame {
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   padding: 4px;
   background: linear-gradient(135deg, var(--accent), #a78bfa);
@@ -375,8 +375,8 @@ h1, h2, h3, h4 {
     text-align: center;
   }
   .profile-frame {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   }
 }
 /* ==================================================
@@ -388,8 +388,8 @@ h1, h2, h3, h4 {
 
 .profile-orbit {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
 }
 
 /* keep the existing profile-frame perfectly centered inside the orbit */
@@ -476,8 +476,8 @@ h1, h2, h3, h4 {
 
 @media (max-width: 600px) {
   .profile-orbit {
-    width: 180px;
-    height: 180px;
+   width: 220px;
+    height: 220px;
   }
   .orbit-icon {
     width: 34px;
