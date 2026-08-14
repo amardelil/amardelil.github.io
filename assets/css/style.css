@@ -359,6 +359,180 @@ h1, h2, h3, h4 {
     max-width: 200px;
   }
 }
+
+/* ==================================================
+   HERO – AMBIENT CODE DECORATION (added)
+   Fills the negative space between the text column and
+   the profile portrait with a faint, slow-moving
+   developer atmosphere. Purely decorative: non-interactive,
+   sits behind all existing content, never touches layout,
+   color palette, or copy.
+   ================================================== */
+
+.hero-container {
+  position: relative;
+}
+
+.hero-left,
+.hero-right {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-code-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  font-family: 'SFMono-Regular', 'JetBrains Mono', 'Fira Code', ui-monospace,
+    Menlo, Consolas, 'Courier New', monospace;
+}
+
+/* Large faint bracket glyph — the quiet signature mark
+   sitting in the gap behind everything else */
+.code-glyph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg);
+  font-size: clamp(6rem, 11vw, 10rem);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0.05;
+  animation: glyphBreathe 12s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes glyphBreathe {
+  0%, 100% { opacity: 0.04; transform: translate(-50%, -50%) rotate(-6deg) scale(1); }
+  50%      { opacity: 0.075; transform: translate(-50%, -50%) rotate(-6deg) scale(1.03); }
+}
+
+/* Floating code tokens */
+.code-token {
+  position: absolute;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4f46e5;
+  opacity: 0;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  animation-name: tokenDrift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.token-1  { top: 8%;  left: 42%; animation-duration: 22s; animation-delay: 0s;   }
+.token-2  { top: 18%; left: 58%; animation-duration: 26s; animation-delay: 2s;   color: #7c3aed; }
+.token-3  { top: 30%; left: 46%; animation-duration: 20s; animation-delay: 5s;   }
+.token-4  { top: 42%; left: 60%; animation-duration: 24s; animation-delay: 1s;   color: #7c3aed; font-size: 1rem; }
+.token-5  { top: 54%; left: 40%; animation-duration: 28s; animation-delay: 7s;   }
+.token-6  { top: 64%; left: 55%; animation-duration: 21s; animation-delay: 3s;   font-size: 0.75rem; }
+.token-7  { top: 74%; left: 44%; animation-duration: 25s; animation-delay: 9s;   }
+.token-8  { top: 86%; left: 57%; animation-duration: 23s; animation-delay: 4s;   font-size: 0.75rem; }
+.token-9  { top: 22%; left: 36%; animation-duration: 27s; animation-delay: 11s;  color: #7c3aed; }
+.token-10 { top: 68%; left: 34%; animation-duration: 24s; animation-delay: 6s;   font-size: 0.75rem; }
+.token-11 { top: 46%; left: 32%; animation-duration: 22s; animation-delay: 13s;  }
+.token-12 { top: 12%; left: 63%; animation-duration: 19s; animation-delay: 8s;   font-size: 1.1rem; }
+
+@keyframes tokenDrift {
+  0%   { opacity: 0;    transform: translateY(18px); }
+  12%  { opacity: 0.12; transform: translateY(8px);  }
+  50%  { opacity: 0.16; transform: translateY(-6px); }
+  88%  { opacity: 0.12; transform: translateY(-16px); }
+  100% { opacity: 0;    transform: translateY(-24px); }
+}
+
+/* Thin connecting "circuit" lines with a gentle flowing pulse */
+.code-lines {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 45%;
+  height: 100%;
+  overflow: visible;
+}
+
+.flow-path {
+  fill: none;
+  stroke: url(#none);
+  stroke: #7c3aed;
+  stroke-width: 1;
+  opacity: 0.08;
+  stroke-linecap: round;
+  stroke-dasharray: 6 10;
+  animation: flowDash 14s linear infinite;
+}
+
+.path-2 {
+  stroke: #4f46e5;
+  animation-duration: 18s;
+  animation-direction: reverse;
+  opacity: 0.06;
+}
+
+@keyframes flowDash {
+  to { stroke-dashoffset: -320; }
+}
+
+.flow-node {
+  fill: #4f46e5;
+  opacity: 0.15;
+  animation: nodePulse 5s ease-in-out infinite;
+}
+.node-2 { fill: #7c3aed; animation-delay: 1s; }
+.node-3 { animation-delay: 2s; }
+.node-4 { fill: #7c3aed; animation-delay: 1.6s; }
+.node-5 { animation-delay: 0.6s; }
+
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.1;  r: 3; }
+  50%      { opacity: 0.28; r: 4.5; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .code-glyph,
+  .code-token,
+  .flow-path,
+  .flow-node {
+    animation: none !important;
+  }
+  .code-token { opacity: 0.1; }
+  .code-glyph { opacity: 0.05; }
+  .flow-node { opacity: 0.12; }
+  .flow-path { opacity: 0.06; }
+}
+
+/* ---------- RESPONSIVE: ambient decoration ---------- */
+
+/* Tablet / stacked layout: keep only the quiet background
+   glyph, drop the tokens and circuit lines so nothing
+   competes with the now-centered, stacked content */
+@media (max-width: 992px) {
+  .code-token,
+  .code-lines {
+    display: none;
+  }
+  .code-glyph {
+    opacity: 0.04;
+    font-size: clamp(5rem, 22vw, 7rem);
+  }
+}
+
+/* Mobile: remove the decoration entirely so it can never
+   overlap text, buttons, or the profile image */
+@media (max-width: 600px) {
+  .hero-code-decor {
+    display: none;
+  }
+}
+
 /* ==================================================
    ABOUT (unchanged, but with minor fixes for email button)
    ================================================== */
