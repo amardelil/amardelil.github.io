@@ -1063,54 +1063,69 @@ h1, h2, h3, h4 {
   .skills-grid {
     grid-template-columns: 1fr;
   }
-}
-/* ---------- PROCESS SECTION ---------- */
+}/* ---------- PROCESS SECTION ---------- */
 .process {
   padding: 80px 0;
   background: var(--bg-secondary);
 }
-
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.process-step {
-  background: var(--bg-card);
-  padding: 2rem 1.5rem;
-  border-radius: 16px;
-  border: 1px solid var(--border-light);
-  text-align: center;
-  transition: all 0.3s ease;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
   position: relative;
 }
 
-.process-step:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.08);
+/* dotted connecting line running behind the circles, desktop only */
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 8%;
+  right: 8%;
+  height: 0;
+  border-top: 2px dashed rgba(99, 102, 241, 0.35);
+  z-index: 1;
 }
 
-.step-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.4;
-  margin-bottom: 0.5rem;
-  font-family: 'Inter', sans-serif;
+.process-step {
+  background: transparent;
+  padding: 0 0.5rem;
+  border-radius: 0;
+  border: none;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.process-step:hover {
+  transform: translateY(-4px);
+}
+
+.step-circle {
+  position: relative;
+  z-index: 2;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 6px var(--bg-secondary), 0 6px 18px rgba(99, 102, 241, 0.35);
 }
 
 .process-step h3 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--accent-hover);
   margin-bottom: 0.5rem;
 }
-
 .process-step p {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
@@ -1119,14 +1134,21 @@ h1, h2, h3, h4 {
 /* ---------- RESPONSIVE: Process ---------- */
 @media (max-width: 992px) {
   .process-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5rem;
+  }
+  .process-grid::before {
+    display: none;
   }
 }
 @media (max-width: 600px) {
   .process-grid {
     grid-template-columns: 1fr;
+    row-gap: 2rem;
   }
-  .step-number {
-    font-size: 2rem;
+  .step-circle {
+    width: 52px;
+    height: 52px;
+    font-size: 1rem;
   }
 }
