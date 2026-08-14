@@ -981,40 +981,75 @@ h1, h2, h3, h4 {
 .contact-form button:hover {
   background: var(--accent-hover);
 }
-
-/* Footer */
+/* ---------- FOOTER ---------- */
 .footer {
-  background: #060b18;
-  color: var(--text-secondary);
-  padding: 3rem 0;
-  text-align: center;
+  background: var(--bg-primary);
+  padding: 1.5rem 0;
   border-top: 1px solid var(--border-light);
 }
-.footer a {
-  color: var(--text-secondary);
-  transition: color 0.2s;
-}
-.footer a:hover {
-  color: #fff;
-}
-.footer .social {
+
+.footer-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
   gap: 1.5rem;
-  margin: 1.5rem 0;
 }
-.footer .social a {
-  font-size: 1.4rem;
-}
-.footer .footer-brand {
-  font-size: 1.4rem;
+
+.footer-brand {
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
 }
-.footer .footer-brand span {
+
+.footer-brand span {
   color: var(--accent);
 }
 
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.footer-nav a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--text-primary);
+}
+
+.footer-right p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ---------- RESPONSIVE: Footer ---------- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-left {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 /* ---------- RESPONSIVE (global) ---------- */
 @media (max-width: 992px) {
   .about-grid {
