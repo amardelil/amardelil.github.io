@@ -43,48 +43,39 @@
     </div>
   </nav>
  <!-- ==================================================
-   HERO – Premium Light Theme with Code Terminal
+   HERO – FINAL ATTRACTIVE PROFESSIONAL VERSION
    ================================================== -->
 <section class="hero" id="home">
-  <!-- Background glowing blobs (soft) -->
-  <div class="bg-glow glow-1"></div>
-  <div class="bg-glow glow-2"></div>
+  <!-- Background mountain layers -->
+  <div class="hero-bg">
+    <div class="mountain-layer layer-1"></div>
+    <div class="mountain-layer layer-2"></div>
+    <div class="mountain-layer layer-3"></div>
+  </div>
 
-  <div class="hero-container">
-    <!-- Left Column: Content -->
-    <div class="hero-content">
-      <!-- Badge: const developer = true -->
-      <div class="status-badge">
-        <span class="code-text">const developer = true;</span>
-      </div>
+  <div class="container hero-container">
+    <!-- LEFT COLUMN -->
+    <div class="hero-left">
+      <!-- Badge -->
+      <div class="hero-badge">Software Developer</div>
 
-      <!-- Main Heading -->
-      <h1 class="hero-title">
-        Hi, I'm <span class="highlight">Amar Delil</span>
-      </h1>
-      <p class="hero-subtitle">
-        Building practical, modern digital experiences.
-      </p>
-      <p class="hero-description">
+      <!-- Headline -->
+      <h1>Hi, I'm <span class="gradient-text">Amar Delil</span></h1>
+
+      <!-- Tagline -->
+      <p class="tagline">Building practical, modern digital experiences.</p>
+
+      <!-- Description -->
+      <p class="desc">
         I'm a passionate full-stack web developer based in Ethiopia,
         specializing in building clean, performant, and user-centered
         web applications that solve real-world problems.
       </p>
 
       <!-- CTA Buttons -->
-      <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary">View My Work →</a>
-        <a href="#contact" class="btn btn-secondary">Hire Me</a>
-      </div>
-
-      <!-- Tech Stack Icons (below CTAs) -->
-      <div class="tech-stack">
-        <span class="stack-label">Tech Stack</span>
-        <div class="stack-icons">
-          <span class="icon-wrapper html"><i class="fab fa-html5"></i></span>
-          <span class="icon-wrapper css"><i class="fab fa-css3-alt"></i></span>
-          <span class="icon-wrapper js"><i class="fab fa-js"></i></span>
-        </div>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View My Work →</a>
+        <a href="#contact" class="btn-secondary">Hire Me</a>
       </div>
 
       <!-- Social Links -->
@@ -94,31 +85,33 @@
         <a href="https://linkedin.com/in/amardelil" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="mailto:programmeramardelil21@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
+
+      <!-- Code badge at bottom -->
+      <div class="code-badge">
+        <span class="code-keyword">const</span>
+        <span class="code-variable">developer</span>
+        <span class="code-operator">=</span>
+        <span class="code-boolean">true</span>
+        <span class="code-punctuation">;</span>
+      </div>
     </div>
 
-    <!-- Right Column: Profile + Code Terminal -->
-    <div class="hero-visual">
-      <!-- Code Terminal (background element) -->
-      <div class="code-terminal">
-        <div class="terminal-header">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <span class="terminal-title">server.js — Bun</span>
+    <!-- RIGHT COLUMN – Profile -->
+    <div class="hero-right">
+      <div class="profile-wrapper">
+        <!-- Decorative rings -->
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+
+        <!-- Profile Image -->
+        <div class="profile-frame">
+          <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
         </div>
-        <pre class="terminal-body"><code><span class="keyword">const</span> { <span class="function">serve</span> } = <span class="function">require</span>(<span class="string">'bun'</span>);
 
-<span class="function">serve</span>({
-  port: <span class="number">3000</span>,
-  <span class="function">fetch</span>(request) {
-    <span class="keyword">return new</span> <span class="predict">Response</span>(<span class="string">"Hello, Bun!"</span>);
-  },
-});</code></pre>
-      </div>
-
-      <!-- Profile Frame with thin elegant ring -->
-      <div class="profile-frame">
-        <img src="assets/images/profile/hero.webp" alt="Amar Delil" />
+        <!-- Floating Tech Icons -->
+        <div class="float-icon icon-html"><i class="fab fa-html5"></i></div>
+        <div class="float-icon icon-css"><i class="fab fa-css3-alt"></i></div>
+        <div class="float-icon icon-js"><i class="fab fa-js"></i></div>
       </div>
     </div>
   </div>
