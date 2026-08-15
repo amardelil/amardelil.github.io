@@ -4,5 +4,3 @@
 > Ethiopian Salary Calculator, Hotel Booking, Yegna Coffee, OCR Scanner, Megenagha Blog.
 
 Live: https://amardelil.github.io
-
-Built with HTML5, CSS3, JavaScript.
