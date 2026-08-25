@@ -1298,6 +1298,17 @@ margin: 1.1rem 0;
   100% { background-position: 0% 50%; }
 }
 
+/* Light theme: soften the shadow, add a glow instead of the dark drop-shadow */
+[data-theme="light"] .about {
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+}
+[data-theme="light"] .about-image {
+  box-shadow: 0 20px 45px rgba(79, 70, 229, 0.12);
+}
+[data-theme="light"] .about-image img {
+  box-shadow: none;
+}
+
 /* Info items become soft "glass" chips in light mode */
 [data-theme="light"] .about-info-item {
   background: #ffffff;
