@@ -123,7 +123,7 @@ themeToggle.addEventListener('click', function () {
   applyTheme(current);
 });
 
-// ---------- ABOUT IMAGE CAROUSEL ----------
+// ---------- ABOUT IMAGE CAROUSEL Image ----------
 const aboutImgs = document.querySelectorAll('.carousel-img');
 const aboutDots = document.querySelectorAll('.about-dot');
 const aboutCarousel = document.querySelector('.about-carousel');
