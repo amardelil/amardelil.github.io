@@ -1276,3 +1276,13 @@ margin: 1.1rem 0;
 /* ==================================================
    ABOUT SECTION — LIGHT THEME ENHANCEMENTS
    ================================================== */
+
+/* Animated gradient border around the about photo */
+.about-image {
+  position: relative;
+  border-radius: 24px;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent), #a78bfa, var(--accent));
+  background-size: 200% 200%;
+  animation: aboutBorderFlow 6s ease infinite;
+}
