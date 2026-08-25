@@ -100,3 +100,15 @@ if (contactForm) {
 const themeToggle = document.getElementById('themeToggle');
 const root = document.documentElement;
 const themeIcon = themeToggle.querySelector('i');
+
+function applyTheme(theme) {
+  if (theme === 'light') {
+    root.setAttribute('data-theme', 'light');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+  } else {
+    root.removeAttribute('data-theme');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+  }
+}
