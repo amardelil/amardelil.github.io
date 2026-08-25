@@ -96,3 +96,7 @@ if (contactForm) {
     });
   });
 }
+// ---------- THEME TOGGLE ----------
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const themeIcon = themeToggle.querySelector('i');
