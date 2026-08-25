@@ -1327,3 +1327,8 @@ margin: 1.1rem 0;
 }
 
 /* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-image {
+    animation: none;
+  }
+}
