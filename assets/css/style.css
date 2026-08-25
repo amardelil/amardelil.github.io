@@ -1286,3 +1286,8 @@ margin: 1.1rem 0;
   background-size: 200% 200%;
   animation: aboutBorderFlow 6s ease infinite;
 }
+.about-image img {
+  border-radius: 20px;
+  display: block;
+  border: none;
+}
