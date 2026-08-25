@@ -112,3 +112,13 @@ function applyTheme(theme) {
     themeIcon.classList.add('fa-sun');
   }
 }
+
+// Load saved preference (defaults to dark, matching your current site)
+const savedTheme = localStorage.getItem('theme') || 'dark';
+applyTheme(savedTheme);
+
+themeToggle.addEventListener('click', function () {
+  const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', current);
+  applyTheme(current);
+});
