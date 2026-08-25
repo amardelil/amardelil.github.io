@@ -96,24 +96,22 @@ if (contactForm) {
     });
   });
 }
-// ---------- THEME TOGGLE Added ----------
+// ---------- THEME TOGGLE (Bulb ON/OFF) ----------
 const themeToggle = document.getElementById('themeToggle');
+const bulbIcon = document.getElementById('bulb-icon');
 const root = document.documentElement;
-const themeIcon = themeToggle.querySelector('i');
 
 function applyTheme(theme) {
   if (theme === 'light') {
     root.setAttribute('data-theme', 'light');
-    themeIcon.classList.remove('fa-sun');
-    themeIcon.classList.add('fa-moon');
+    bulbIcon.className = 'fa-solid fa-lightbulb';   // ON - filled
   } else {
     root.removeAttribute('data-theme');
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
+    bulbIcon.className = 'fa-regular fa-lightbulb'; // OFF - outline
   }
 }
 
-// Load saved preference (defaults to dark, matching your current site)
+// Load saved preference (default to dark)
 const savedTheme = localStorage.getItem('theme') || 'dark';
 applyTheme(savedTheme);
 
@@ -122,7 +120,6 @@ themeToggle.addEventListener('click', function () {
   localStorage.setItem('theme', current);
   applyTheme(current);
 });
-
 // ---------- ABOUT IMAGE CAROUSEL Image ----------
 const aboutImgs = document.querySelectorAll('.carousel-img');
 const aboutDots = document.querySelectorAll('.about-dot');

@@ -1417,3 +1417,47 @@ margin: 1.1rem 0;
     pointer-events: auto;
   }
 }
+/* ==================================================
+   BULB TOGGLE – GLOW ANIMATION
+   ================================================== */
+
+#bulb-icon {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Dark mode → Bulb OFF (no glow, greyish) */
+[data-theme="dark"] #bulb-icon,
+:root:not([data-theme="light"]) #bulb-icon {
+  color: #94a3b8;                /* soft grey outline */
+  text-shadow: none;
+  animation: none;
+}
+
+/* Light mode → Bulb ON (filled yellow + breathing glow) */
+[data-theme="light"] #bulb-icon {
+  color: #ffcc00;
+  animation: filamentGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes filamentGlow {
+  0% {
+    text-shadow:
+      0 0 8px #ffcc00,
+      0 0 20px #ffaa00,
+      0 0 40px #ff8800;
+    transform: scale(1);
+  }
+  100% {
+    text-shadow:
+      0 0 15px #ffdd44,
+      0 0 40px #ffcc00,
+      0 0 80px #ff9900,
+      0 0 120px #ff6600;
+    transform: scale(1.05);
+  }
+}
+
+/* Ensure the toggle button itself stays clean */
+.theme-toggle {
+  /* already styled in your CSS, keep as is */
+}
