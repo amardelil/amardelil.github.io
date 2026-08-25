@@ -1312,3 +1312,18 @@ margin: 1.1rem 0;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(79, 70, 229, 0.1);
 }
+
+/* Stat boxes get a light gradient instead of flat dark card */
+[data-theme="light"] .stat-box {
+  background: linear-gradient(135deg, #ffffff, #eef2ff);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.08);
+}
+[data-theme="light"] .stat-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.14);
+}
+.stat-box {
+  transition: all 0.25s;
+}
+
+/* Respect reduced motion */
