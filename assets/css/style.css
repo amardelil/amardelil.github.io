@@ -1246,3 +1246,9 @@ margin: 1.1rem 0;
 [data-theme="light"] .project-card:hover {
   box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
 }
+@media (max-width: 768px) {
+  [data-theme="light"] .nav-links {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  }
+}
