@@ -515,10 +515,8 @@ h1, h2, h3, h4 {
 }
 .about-image img {
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--border-light);
+  display: block;
+  border: none;
 }
 .about-content p {
   color: var(--text-secondary);
@@ -1286,12 +1284,6 @@ margin: 1.1rem 0;
   background-size: 200% 200%;
   animation: aboutBorderFlow 6s ease infinite;
 }
-.about-image img {
-  border-radius: 20px;
-  display: block;
-  border: none;
-}
-
 @keyframes aboutBorderFlow {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
