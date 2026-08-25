@@ -96,7 +96,7 @@ if (contactForm) {
     });
   });
 }
-// ---------- THEME TOGGLE ----------
+// ---------- THEME TOGGLE Added ----------
 const themeToggle = document.getElementById('themeToggle');
 const root = document.documentElement;
 const themeIcon = themeToggle.querySelector('i');
