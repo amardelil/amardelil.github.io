@@ -1192,3 +1192,17 @@ margin: 1.1rem 0;
     font-size: 1rem;
   }
 }
+
+/* ==================================================
+   LIGHT THEME OVERRIDES
+   ================================================== */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #4f46e5;
+  --accent-hover: #6366f1;
+  --border-light: #e2e8f0;
+}
