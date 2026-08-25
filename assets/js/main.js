@@ -122,3 +122,49 @@ themeToggle.addEventListener('click', function () {
   localStorage.setItem('theme', current);
   applyTheme(current);
 });
+
+// ---------- ABOUT IMAGE CAROUSEL ----------
+const aboutImgs = document.querySelectorAll('.carousel-img');
+const aboutDots = document.querySelectorAll('.about-dot');
+const aboutCarousel = document.querySelector('.about-carousel');
+let aboutIndex = 0;
+let aboutTimer = null;
+const AUTOPLAY_MS = 4500;
+
+function getInitialAboutIndex() {
+  // dark theme (default/no attribute) -> about-2.webp (index 1) first
+  // light theme -> about.webp (index 0) first
+  const theme = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  return theme === 'light' ? 0 : 1;
+}
+
+function setAboutImage(i) {
+  aboutImgs.forEach((img, idx) => img.classList.toggle('active', idx === i));
+  aboutDots.forEach((dot, idx) => dot.classList.toggle('active', idx === i));
+  aboutIndex = i;
+}
+
+function startAboutAutoplay() {
+  clearInterval(aboutTimer);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+  aboutTimer = setInterval(() => {
+    setAboutImage((aboutIndex + 1) % aboutImgs.length);
+  }, AUTOPLAY_MS);
+}
+
+if (aboutImgs.length && aboutDots.length) {
+  setAboutImage(getInitialAboutIndex());
+  startAboutAutoplay();
+
+  aboutDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      setAboutImage(parseInt(dot.dataset.index, 10));
+      startAboutAutoplay(); // reset timer on manual click
+    });
+  });
+
+  // pause while user hovers/interacts, resume on leave
+  aboutCarousel.addEventListener('mouseenter', () => clearInterval(aboutTimer));
+  aboutCarousel.addEventListener('mouseleave', () => startAboutAutoplay());
+}
