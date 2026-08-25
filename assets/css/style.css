@@ -1206,3 +1206,43 @@ margin: 1.1rem 0;
   --accent-hover: #6366f1;
   --border-light: #e2e8f0;
 }
+
+/* Fixes for values that were hardcoded instead of using variables */
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .nav-brand,
+[data-theme="light"] .mobile-toggle,
+[data-theme="light"] .hero h1 {
+  color: var(--text-primary);
+}
+[data-theme="light"] .btn-secondary,
+[data-theme="light"] .about-buttons .btn-secondary {
+  color: var(--text-primary);
+  border-color: #cbd5e1;
+}
+[data-theme="light"] .hero-social a {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--border-light);
+}
+[data-theme="light"] .project-card .thumb {
+  background: var(--bg-secondary);
+}
+[data-theme="light"] .progress-bar {
+  background: #e2e8f0;
+}
+[data-theme="light"] .tech-box .fa-github {
+  color: #24292f;
+}
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .service-card:hover {
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+[data-theme="light"] .about-image img,
+[data-theme="light"] .project-card:hover {
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+}
