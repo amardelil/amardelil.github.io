@@ -22,6 +22,10 @@
 html {
   scroll-behavior: smooth;
 }
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg-primary);
@@ -32,6 +36,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+}
+@media (max-width: 380px) {
+  .container,
+  .hero-container {
+    padding: 0 16px;
+  }
 }
 a {
   text-decoration: none;
@@ -549,6 +559,7 @@ h1, h2, h3, h4 {
 }
 .about-stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 1.5rem;
 }
@@ -710,7 +721,7 @@ h1, h2, h3, h4 {
 }
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -1069,7 +1080,7 @@ margin: 1.1rem 0;
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -1090,6 +1101,8 @@ margin: 1.1rem 0;
   .mobile-toggle {
     display: block;
   }
+}
+@media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1243,7 +1256,7 @@ margin: 1.1rem 0;
 [data-theme="light"] .project-card:hover {
   box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
 }
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   [data-theme="light"] .nav-links {
     background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
