@@ -1461,3 +1461,60 @@ margin: 1.1rem 0;
 .theme-toggle {
   /* already styled in your CSS, keep as is */
 }
+/* ===== Small-phone fixes (Galaxy A10s ≈ 360px) ===== */
+@media (max-width: 480px) {
+  html, body { overflow-x: hidden; }
+
+  .hero {
+    min-height: auto;
+    padding: 84px 0 40px;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-right { order: -1; display: flex; justify-content: center; }
+  .hero-left  { text-align: center; }
+
+  .profile-orbit {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  .profile-frame { width: 150px; height: 150px; }
+  .profile-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+  .orbit-icon { transform: scale(.65); }
+
+  .hero h1 { font-size: clamp(1.6rem, 8vw, 2rem); line-height: 1.2; }
+  .hero-badge { font-size: .75rem; padding: 4px 12px; }
+  .hero-tagline { font-size: 1rem; }
+  .hero-desc { font-size: .9rem; line-height: 1.5; }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+  }
+  .hero-buttons a { width: 100%; text-align: center; }
+
+  .hero-social { justify-content: center; }
+
+  .section-title { font-size: 1.6rem; }
+  .project-grid,
+  .services-grid,
+  .process-grid,
+  .skills-grid,
+  .about-grid,
+  .contact-wrapper { grid-template-columns: 1fr !important; }
+  img { max-width: 100%; height: auto; }
+}
+
+@media (max-width: 400px) {
+  .orbit-icon, .orbit-lines { display: none; }
+}
